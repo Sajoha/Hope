@@ -1,0 +1,28 @@
+'.container': {
+	backgroundColor:'white'
+}
+
+'.titleView': {
+	top: '0dp',
+	width: Ti.UI.SIZE,
+	height: '10%'
+}
+
+'.title': {
+	top: '20%',
+	font: {
+		fontSize: 24
+	}
+}
+
+'Label': {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: '#000'
+}
+
+'#label': {
+	font: {
+		fontSize: 12
+	}
+}

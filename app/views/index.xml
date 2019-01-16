@@ -1,0 +1,13 @@
+<Alloy>
+	<Window class='container'>
+		<View class='titleView'>
+			<Label class='title'>Hope Baptist Church</Label>
+		</View>
+		<View class='cellContainer'>
+			<View class='cell'>
+
+			</View>
+		</View>
+		<Label id='label' onClick='doClick'>Hello, World</Label>
+	</Window>
+</Alloy>
