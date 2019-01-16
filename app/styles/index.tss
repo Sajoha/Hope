@@ -3,26 +3,46 @@
 }
 
 '.titleView': {
-	top: '0dp',
-	width: Ti.UI.SIZE,
-	height: '10%'
+	top: '4%',
+	width: '95%',
+	height: '10%',
+	borderRadius: 5,
+	backgroundColor: '#C98716'
 }
 
 '.title': {
+	middle: '0%',
+	color: 'white',
+	font: { fontSize: 24 }
+}
+
+'.cell': {
+	top: '10dp',
+	width: '95%',
+	height: '10%',
+	borderRadius: 5,
+	backgroundColor: '#37C435'
+}
+
+'.cellContainer': {
 	top: '20%',
-	font: {
-		fontSize: 24
-	}
+	height: '85%',
+	width: Ti.UI.FILL,
+	layout: 'vertical'
+}
+
+'.button': {
+	middle: '0%',
+	color: 'white',
+	font: { fontSize: '20dp' }
 }
 
 'Label': {
+	color: '#000',
 	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	color: '#000'
+	height: Ti.UI.SIZE
 }
 
 '#label': {
-	font: {
-		fontSize: 12
-	}
+	font: { fontSize: 12 }
 }
