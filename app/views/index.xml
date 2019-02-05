@@ -1,16 +1,22 @@
 <Alloy>
-	<Window class='container'>
-		<View class='titleView'>
-			<Label class='title' text='Hope Baptist Church'/>
-		</View>
-		<ScrollView class='cellContainer'>
-			<View class='cell'>
-				<Label class='button' text='Sermons'/>
+	<NavigationWindow backgroundColor="black">
+		<Window class='container'>
+			<View class='titleView'>
+				<Label class='title' text='Hope Baptist Church' />
 			</View>
+			<ScrollView class='cellContainer'>
+				<View class='cell' onClick='openSermons'>
+					<Label class='button' text='Sermons' />
+				</View>
 
-			<View class='cell'>
-				<Label class='button' text='About Us'/>
-			</View>
-		</ScrollView>
-	</Window>
+				<View class='cell'>
+					<Label class='button' text='About Us' />
+				</View>
+
+				<View class='cell'>
+					<Label class='button' text='Our Pastor' />
+				</View>
+			</ScrollView>
+		</Window>
+	</NavigationWindow>
 </Alloy>

@@ -1,5 +1,5 @@
-function doClick(e) {
-	alert($.label.text);
-}
-
 $.index.open();
+
+function openSermons() {
+	Alloy.createController('sermons').getView().open();
+}
