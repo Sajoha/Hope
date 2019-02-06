@@ -1,0 +1,35 @@
+'.container': {
+  layout: 'vertical',
+  width: Ti.UI.FILL,
+  height: Ti.UI.FILL
+}
+
+'.cell': {
+  height: 60,
+  width: '98%',
+}
+
+'.title': {
+  top: 5,
+  left: 5,
+  font: {
+    fontSize: 22
+  }
+}
+
+'.data': {
+  bottom: 0,
+  height: '40%',
+  width: Ti.UI.Fill,
+  layout: 'horizontal'
+}
+
+'.label': {
+  left: 5,
+  right: 5,
+  bottom: 0,
+  width: Ti.UI.SIZE,
+  font: {
+    fontSize: 12
+  }
+}

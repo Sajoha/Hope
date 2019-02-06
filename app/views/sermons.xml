@@ -1,0 +1,21 @@
+<Alloy>
+	<NavigationWindow backgroundColor="black">
+		<Window class='container' title='Sermons' onOpen='getSermons'>
+			<ListView id='listview' defaultItemTemplate='SermonCell' onItemclick='handleListItemClick'>
+				<ListSection id='section' />
+				<Templates>
+					<ItemTemplate name='SermonCell'>
+						<View class='cell'>
+							<Label class='title' bindId='sermon' />
+							<View class='data'>
+								<Label class='label' bindId='preacher' />
+								<Label class='label' bindId='books' />
+							</View>
+						</View>
+					</ItemTemplate>
+				</Templates>
+			</ListView>
+			<ActivityIndicator id="activityIndicator" message="Loading..." />
+		</Window>
+	</NavigationWindow>
+</Alloy>
