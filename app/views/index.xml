@@ -1,19 +1,27 @@
 <Alloy>
-	<NavigationWindow backgroundColor="black">
+	<NavigationWindow backgroundColor="white">
 		<Window class='container'>
 			<View class='titleView'>
-				<Label class='title' text='Hope Baptist Church' />
+				<ImageView class='title' image='/images/logo.png' />
 			</View>
 			<ScrollView class='cellContainer'>
 				<View class='cell' onClick='openSermons'>
 					<Label class='button' text='Sermons' />
 				</View>
 
-				<View class='cell'>
+				<View class='cell' onClick='openEvents'>
+					<Label class='button' text='Upcoming Events' />
+				</View>
+
+				<View class='cell' onClick='openFind'>
+					<Label class='button' text='Find Us' />
+				</View>
+
+				<View class='cell' onClick='openAbout'>
 					<Label class='button' text='About Us' />
 				</View>
 
-				<View class='cell'>
+				<View class='cell' onClick='openPastor'>
 					<Label class='button' text='Our Pastor' />
 				</View>
 			</ScrollView>

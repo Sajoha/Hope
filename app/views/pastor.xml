@@ -1,0 +1,5 @@
+<Alloy>
+  <Window class='container' title='Our Pastor' backgroundColor='white'>
+    <ImageView image='/images/pastor.png' middle='0%' width='95%' />
+  </Window>
+</Alloy>

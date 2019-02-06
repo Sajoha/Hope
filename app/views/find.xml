@@ -1,0 +1,5 @@
+<Alloy>
+  <Window class='container' title='Find Us' backgroundColor='white'>
+    <Label text='//TODO' middle='0%' />
+  </Window>
+</Alloy>

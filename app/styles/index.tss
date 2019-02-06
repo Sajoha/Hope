@@ -1,19 +1,18 @@
 '.container': {
+	layout: 'vertical',
 	backgroundColor:'white'
 }
 
 '.titleView': {
 	top: '4%',
 	width: '95%',
-	height: '10%',
+	height: '17%',
 	borderRadius: 5,
-	backgroundColor: '#C98716'
+	backgroundColor: '#F4DA26'
 }
 
 '.title': {
-	middle: '0%',
-	color: 'white',
-	font: { fontSize: 24 }
+	middle: '0%'
 }
 
 '.cell': {
@@ -25,7 +24,7 @@
 }
 
 '.cellContainer': {
-	top: '20%',
+	top: '20dp',
 	height: '85%',
 	width: Ti.UI.FILL,
 	layout: 'vertical'
