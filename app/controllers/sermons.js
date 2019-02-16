@@ -61,13 +61,18 @@ function setUI(sermons, preachers) {
 			sermon: {
 				text: sermon.title.rendered
 			},
-			books: {
+			passage: {
 				text: `Passage: ${sermon.bible_passage}`
 			},
-			link: sermon.sermon_audio,
+			data: {
+				preacher: preacher,
+				link: sermon.sermon_audio,
+				sermon: sermon.title.rendered,
+				passage: sermon.bible_passage
+			},
 			properties: {
 				itemId: sermon.id,
-				height: Ti.UI.SIZE
+				selectionStyle: (OS_IOS) ? Ti.UI.iOS.ListViewCellSelectionStyle.NONE : null
 			}
 		});
 	});
@@ -78,5 +83,6 @@ function setUI(sermons, preachers) {
 }
 
 function handleListItemClick(e) {
-	Ti.Platform.openURL(e.section.getItemAt(e.itemIndex).link);
+	const sermon = e.section.getItemAt(e.itemIndex).data;
+	Ti.Platform.openURL(sermon.link);
 }

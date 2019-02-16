@@ -1,13 +1,13 @@
 <Alloy>
 	<NavigationWindow backgroundColor="white">
-		<Window class='container'>
+		<Window class='container' navBarHidden='true'>
 			<ImageView id='img' />
 			<ScrollView class='cellContainer'>
 				<View class='titleView'>
 					<ImageView class='title' image='/images/logo.png' />
 				</View>
 
-				<View id='spacer' height='7%' />
+				<View id='spacer' height='9%' />
 
 				<View class='cell' onClick='openSermons'>
 					<Label class='button' text='Sermons' />

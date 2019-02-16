@@ -8,7 +8,7 @@
 						<Label class='title' bindId='sermon' />
 						<View class='data'>
 							<Label class='label' bindId='preacher' />
-							<Label class='label' bindId='books' />
+							<Label class='label' bindId='passage' />
 						</View>
 					</View>
 				</ItemTemplate>

@@ -3,7 +3,7 @@
 '.title': { middle: '0%' }
 
 '.titleView': {
-	top: '2%',
+	top: '5%',
 	width: '95%',
 	height: '17%',
 	borderRadius: 5,
