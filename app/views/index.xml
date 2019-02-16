@@ -1,10 +1,14 @@
 <Alloy>
 	<NavigationWindow backgroundColor="white">
 		<Window class='container'>
-			<View class='titleView'>
-				<ImageView class='title' image='/images/logo.png' />
-			</View>
+			<ImageView id='img' />
 			<ScrollView class='cellContainer'>
+				<View class='titleView'>
+					<ImageView class='title' image='/images/logo.png' />
+				</View>
+
+				<View id='spacer' height='7%' />
+
 				<View class='cell' onClick='openSermons'>
 					<Label class='button' text='Sermons' />
 				</View>

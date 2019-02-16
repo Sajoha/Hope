@@ -1,31 +1,33 @@
-'.container': {
-	layout: 'vertical',
-	backgroundColor:'white'
-}
+'.container': { backgroundColor: 'white' }
+
+'.title': { middle: '0%' }
 
 '.titleView': {
-	top: '4%',
+	top: '2%',
 	width: '95%',
 	height: '17%',
 	borderRadius: 5,
 	backgroundColor: '#F4DA26'
 }
 
-'.title': {
-	middle: '0%'
-}
-
 '.cell': {
-	top: '10dp',
+	top: '2%',
 	width: '95%',
-	height: '10%',
-	borderRadius: 5,
-	backgroundColor: '#37C435'
+	height: '8%',
+	borderRadius: 25,
+	backgroundGradient: {
+		type: 'linear',
+		startPoint: { x: '50%', y: '0%' },
+		endPoint: { x: '50%', y: '100%' },
+		colors: [
+			{ color: '#EB8028', offset: 0.0 },
+			{ color: '#F4E626', offset: 1.0 }
+		]
+	}
 }
 
 '.cellContainer': {
-	top: '20dp',
-	height: '85%',
+	height: '100%',
 	width: Ti.UI.FILL,
 	layout: 'vertical'
 }
@@ -36,12 +38,8 @@
 	font: { fontSize: '20dp' }
 }
 
-'Label': {
-	color: '#000',
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE
-}
-
-'#label': {
-	font: { fontSize: 12 }
+'#img': {
+	width: '160%',
+	height: '100%',
+	image: '/images/background.png'
 }

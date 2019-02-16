@@ -26,29 +26,6 @@ function request({ url, body, headers = {}, method = 'GET' }) {
 	});
 };
 
-function getPreacher(preacherId) {
-	switch (preacherId) {
-		case 23:
-			return 'Bro. Andrew';
-
-		case 26:
-			return 'Pastor Dan';
-
-		case 44:
-			return 'Missionary Pastor Sammy Perez';
-
-		case 49:
-			return 'Evangelist Bob Jones';
-
-		case 55:
-			return 'Pastor Crichton';
-
-		default:
-			return null;
-	}
-}
-
 module.exports = {
-	request,
-	getPreacher
+	request
 }

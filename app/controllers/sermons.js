@@ -5,43 +5,58 @@ const lib = require('/lib');
 function getSermons() {
 	$.activityIndicator.show();
 
-	lib.request({ url: 'http://hope.ie/wp-json/wp/v2/wpfc_sermon' })
-		.then(data => {
+	let
+		sermons,
+		preachers;
+
+	Promise.resolve()
+		.then(() => {
 			return new Promise((resolve, reject) => {
-				try {
-					return resolve(JSON.parse(data));
-				} catch (err) {
-					return reject(err);
-				}
+				lib.request({ url: 'http://hope.ie/wp-json/wp/v2/wpfc_sermon' })
+					.then(data => {
+						try {
+							sermons = JSON.parse(data);
+							return resolve();
+						} catch (err) {
+							return reject(err);
+						}
+					});
 			});
 		})
-		.then(data => {
-			setUI(data);
+		.then(() => {
+			return new Promise((resolve, reject) => {
+				lib.request({ url: 'http://hope.ie/wp-json/wp/v2/wpfc_preacher' })
+					.then(data => {
+						try {
+							preachers = JSON.parse(data);
+							return resolve();
+						} catch (err) {
+							return reject(err);
+						}
+					});
+			});
+		})
+		.then(() => {
+			setUI(sermons, preachers);
 		})
 		.catch(err => {
 			console.log(err);
 		});
 }
 
-function setUI(sermons) {
+function setUI(sermons, preachers) {
 	const sermonData = [];
 
 	sermons.forEach(sermon => {
 		let
-			preachers = [],
-			preacherString = 'Preacher';
+			preacher,
+			index = preachers.indexOf(preachers.find(x => x.id === sermon.wpfc_preacher[0]));
 
-		if(sermon.wpfc_preacher.length > 1) {
-			preacherString = 'Preachers';
-		}
-
-		sermon.wpfc_preacher.forEach(preacherId => {
-			preachers.push(lib.getPreacher(preacherId));
-		});
+		(index >= 0) ? preacher = preachers[index]['name']: preacher = 'Unknown';
 
 		sermonData.push({
 			preacher: {
-				text: `${preacherString}: ${preachers.toString().replace(',', ', ')}`
+				text: `Preacher: ${preacher}`
 			},
 			sermon: {
 				text: sermon.title.rendered
