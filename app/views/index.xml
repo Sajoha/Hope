@@ -7,7 +7,7 @@
 					<ImageView class='title' image='/images/logo.png' />
 				</View>
 
-				<View id='spacer' height='9%' />
+				<View id='spacer' height='11%' />
 
 				<View class='cell' onClick='openSermons'>
 					<Label class='button' text='Sermons' />

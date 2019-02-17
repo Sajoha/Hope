@@ -1,0 +1,20 @@
+"#mapview": {
+  top: '0dp',
+  height: '100%',
+  width: Ti.UI.FILL,
+  userLocation: true,
+  region: {
+    latitude: 53.289818,
+    longitude: -6.242318,
+    latitudeDelta: 0.01,
+    longitudeDelta: 0.01
+  }
+}
+
+"#hope": {
+  latitude: 53.289818,
+  longitude: -6.242318,
+  title: 'Hope Baptist Church',
+  subtitle: 'Taney Hall, Eglinton Terrace, Dundrum, Dublin 14, D14 C7F7',
+  pincolor: Alloy.Globals.Map.ANNOTATION_RED
+}

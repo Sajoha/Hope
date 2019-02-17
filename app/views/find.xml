@@ -1,5 +1,7 @@
 <Alloy>
-  <Window class='container' title='Find Us' backgroundColor='white'>
-    <Label text='//TODO' middle='0%' />
+  <Window class='container' title='Find Us' backgroundColor='white' layout='vertical'>
+    <Module id='mapview' module='ti.map' method='createView'>
+      <Annotation id='hope' myId='1337' />
+    </Module>
   </Window>
 </Alloy>

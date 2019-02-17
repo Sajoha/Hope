@@ -3,18 +3,27 @@
 '.title': { middle: '0%' }
 
 '.titleView': {
-	top: '5%',
+	top: '8%',
 	width: '95%',
 	height: '17%',
-	borderRadius: 5,
-	backgroundColor: '#F4DA26'
+	borderRadius: 10,
+	backgroundGradient: {
+		type: 'linear',
+		startPoint: { x: '0%', y: '50%' },
+		endPoint: { x: '100%', y: '50%' },
+		colors: [
+			{ color: '#00000000', offset: 0.0 },
+			{ color: '#FFFFFFFF', offset: 0.5 },
+			{ color: '#00000000', offset: 1.0 }
+		]
+	}
 }
 
 '.cell': {
 	top: '2%',
 	width: '95%',
 	height: '8%',
-	borderRadius: 25,
+	borderRadius: 26,
 	backgroundGradient: {
 		type: 'linear',
 		startPoint: { x: '50%', y: '0%' },
@@ -34,7 +43,7 @@
 
 '.button': {
 	middle: '0%',
-	color: 'white',
+	color: 'black',
 	font: { fontSize: '20dp' }
 }
 
