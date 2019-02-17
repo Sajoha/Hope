@@ -13,6 +13,7 @@
 					</View>
 				</ItemTemplate>
 			</Templates>
+			<RefreshControl id="refresh" onRefreshstart="refreshSermons" />
 		</ListView>
 		<ActivityIndicator id="activityIndicator" message="Loading..." />
 	</Window>

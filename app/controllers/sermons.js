@@ -2,6 +2,10 @@
 
 const lib = require('/lib');
 
+function refreshSermons() {
+	getSermons();
+}
+
 function getSermons() {
 	$.activityIndicator.show();
 
@@ -45,6 +49,8 @@ function getSermons() {
 }
 
 function setUI(sermons, preachers) {
+	$.refresh.endRefreshing();
+
 	const sermonData = [];
 
 	sermons.forEach(sermon => {

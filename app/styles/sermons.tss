@@ -5,20 +5,19 @@
 }
 
 '.cell': {
-  height: 60,
+  height: 55,
   width: '98%',
+  layout: 'vertical'
 }
 
 '.title': {
   top: 5,
   left: 5,
-  font: {
-    fontSize: 22
-  }
+  font: { fontSize: 22 }
 }
 
 '.data': {
-  bottom: 0,
+  top: 3,
   height: '40%',
   width: Ti.UI.Fill,
   layout: 'horizontal'
@@ -29,7 +28,5 @@
   right: 5,
   bottom: 0,
   width: Ti.UI.SIZE,
-  font: {
-    fontSize: 12
-  }
+  font: { fontSize: 10 }
 }
