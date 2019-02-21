@@ -7,7 +7,7 @@
 					<ImageView class='title' image='/images/logo.png' />
 				</View>
 
-				<View id='spacer' height='11%' />
+				<View id='spacer' height='10%' />
 
 				<View class='cell' onClick='openSermons'>
 					<Label class='button' text='Sermons' />
@@ -27,6 +27,10 @@
 
 				<View class='cell' onClick='openPastor'>
 					<Label class='button' text='Our Pastor' />
+				</View>
+
+				<View class='cell'>
+					<Label class='button' text='Choir' />
 				</View>
 			</ScrollView>
 		</Window>

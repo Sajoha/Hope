@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class='container' title='Sermons' backgroundColor='white' onOpen='getSermons'>
+	<Window id='win' class='container' title='Sermons' backgroundColor='white' onOpen='getData'>
 		<ListView id='listview' defaultItemTemplate='SermonCell' onItemclick='handleListItemClick'>
 			<ListSection id='section' />
 			<Templates>
@@ -13,7 +13,7 @@
 					</View>
 				</ItemTemplate>
 			</Templates>
-			<RefreshControl id="refresh" onRefreshstart="refreshSermons" />
+			<RefreshControl id="refresh" onRefreshstart="refreshData" />
 		</ListView>
 		<ActivityIndicator id="activityIndicator" message="Loading..." />
 	</Window>

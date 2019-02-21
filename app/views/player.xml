@@ -1,0 +1,36 @@
+<Alloy>
+	<TabGroup id='tabGrp' backgroundColor='white' onOpen='getMainPassage'>
+		<Tab id='tab1' title='Media' icon='KS_nav_views.png'>
+			<Window id='win1' class='win'>
+				<LeftNavButton platform=ios>
+					<Button title="Close" onClick="closeWindow" />
+				</LeftNavButton>
+				<View id='info'>
+					<Label id='preacher' class='data' />
+
+					<Label id='passage' class='data' />
+					<View class='data'>
+						<Label id='date' class='leftText' />
+
+						<Label id='time' class='rightText' />
+					</View>
+					<View class='data'>
+						<Label id='length' class='leftText' />
+
+						<Label id='views' class='rightText' />
+					</View>
+				</View>
+			</Window>
+		</Tab>
+		<Tab id='tab2' title='Passage' icon='KS_nav_views.png'>
+			<Window id='win2' class='win'>
+				<LeftNavButton platform=ios>
+					<Button title="Close" onClick="closeWindow" />
+				</LeftNavButton>
+				<ScrollView>
+					<Label id='biblePassage' />
+				</ScrollView>
+			</Window>
+		</Tab>
+	</TabGroup>
+</Alloy>

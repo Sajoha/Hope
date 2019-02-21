@@ -2,53 +2,35 @@
 
 const lib = require('/lib');
 
-function refreshSermons() {
-	getSermons();
-}
+function refreshData() { getData(); }
 
-function getSermons() {
+function getData() {
 	$.activityIndicator.show();
 
-	let
-		sermons,
-		preachers;
+	const getSermons = new Promise((resolve, reject) => {
+		lib.request({ url: 'http://hope.ie/wp-json/wp/v2/wpfc_sermon' })
+			.then(data => resolve(JSON.parse(data)))
+			.catch(err => reject(err));
+	});
 
-	Promise.resolve()
-		.then(() => {
-			return new Promise((resolve, reject) => {
-				lib.request({ url: 'http://hope.ie/wp-json/wp/v2/wpfc_sermon' })
-					.then(data => {
-						try {
-							sermons = JSON.parse(data);
-							return resolve();
-						} catch (err) {
-							return reject(err);
-						}
-					});
-			});
-		})
-		.then(() => {
-			return new Promise((resolve, reject) => {
-				lib.request({ url: 'http://hope.ie/wp-json/wp/v2/wpfc_preacher' })
-					.then(data => {
-						try {
-							preachers = JSON.parse(data);
-							return resolve();
-						} catch (err) {
-							return reject(err);
-						}
-					});
-			});
-		})
-		.then(() => {
-			setUI(sermons, preachers);
-		})
-		.catch(err => {
-			console.log(err);
-		});
+	const getPreachers = new Promise((resolve, reject) => {
+		lib.request({ url: 'http://hope.ie/wp-json/wp/v2/wpfc_preacher' })
+			.then(data => resolve(JSON.parse(data)))
+			.catch(err => reject(err));
+	});
+
+	const getServices = new Promise((resolve, reject) => {
+		lib.request({ url: 'http://hope.ie/wp-json/wp/v2/wpfc_service_type' })
+			.then(data => resolve(JSON.parse(data)))
+			.catch(err => reject(err));
+	});
+
+	Promise.all([getSermons, getPreachers, getServices])
+		.then(values => setUI(values[0], values[1], values[2]))
+		.catch(err => console.error(err));
 }
 
-function setUI(sermons, preachers) {
+function setUI(sermons, preachers, serviceType) {
 	$.refresh.endRefreshing();
 
 	const sermonData = [];
@@ -56,25 +38,31 @@ function setUI(sermons, preachers) {
 	sermons.forEach(sermon => {
 		let
 			preacher,
-			index = preachers.indexOf(preachers.find(x => x.id === sermon.wpfc_preacher[0]));
+			preacherIndex = preachers.indexOf(preachers.find(x => x.id === sermon.wpfc_preacher[0]));
 
-		(index >= 0) ? preacher = preachers[index]['name']: preacher = 'Unknown';
+		(preacherIndex >= 0) ? preacher = preachers[preacherIndex]['name']: preacher = 'Unknown';
+
+		let
+			service,
+			serviceIndex = serviceType.indexOf(serviceType.find(x => x.id === sermon.wpfc_service_type[0]));
+
+		(serviceIndex >= 0) ? service = serviceType[serviceIndex]['name']: service = 'Unknown';
+
+		const sermonDate = require('/alloy/moment').unix(sermon.sermon_date).format("DD/MM/YYYY");
 
 		sermonData.push({
-			preacher: {
-				text: `Preacher: ${preacher}`
-			},
-			sermon: {
-				text: sermon.title.rendered
-			},
-			passage: {
-				text: `Passage: ${sermon.bible_passage}`
-			},
+			sermon: { text: sermon.title.rendered },
+			preacher: { text: `Preacher: ${preacher}` },
+			passage: { text: `Passage: ${sermon.bible_passage}` },
 			data: {
+				date: sermonDate,
+				service: service,
 				preacher: preacher,
+				views: sermon._views,
 				link: sermon.sermon_audio,
 				sermon: sermon.title.rendered,
-				passage: sermon.bible_passage
+				passage: sermon.bible_passage,
+				duration: sermon.sermon_audio_duration
 			},
 			properties: {
 				itemId: sermon.id,
@@ -90,5 +78,6 @@ function setUI(sermons, preachers) {
 
 function handleListItemClick(e) {
 	const sermon = e.section.getItemAt(e.itemIndex).data;
-	Ti.Platform.openURL(sermon.link);
+
+	Alloy.createController('player', { sermon }).getView().open();
 }

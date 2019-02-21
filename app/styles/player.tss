@@ -1,0 +1,54 @@
+'.win': {
+  layout: 'vertical',
+  backgroundColor: '#FDF5E8'
+}
+
+'#title': {
+  top: '5%',
+  font: { fontSize: 30 }
+}
+
+'#info': {
+  top: '2%',
+  height: '16%',
+  layout: 'vertical'
+}
+
+'.data': {
+  width: '96%',
+  height: '25%',
+  font: { fontSize: 14 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+'.leftText': {
+  left: 0,
+  width: '50%',
+  font: { fontSize: 14 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+'.rightText': {
+  left: '50%',
+  width: '50%',
+  font: { fontSize: 14 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+'#media': {
+  backgroundColor: 'red',
+  width: '96%',
+  height: '10%'
+}
+
+'#biblePassage': {
+  top: '5%',
+  width: '96%',
+  height: Ti.UI.SIZE,
+  font: { fontSize: 20 }
+}
+
+'#close': {
+  top: 10,
+  left: 10
+}
