@@ -19,6 +19,21 @@ function setUI(passage) {
 	$.views.text = `View Count: ${data.views}`;
 
 	$.biblePassage.text = lib.parsePassage(passage.verses);
+
+	$.audioPlayer.url = data.link;
 }
 
 function closeWindow() { $.tabGrp.close(); }
+
+function restart() {
+	$.audioPlayer.stop();
+	$.audioPlayer.start()
+}
+
+function play() { $.audioPlayer.start(); }
+
+function pause() { $.audioPlayer.pause(); }
+
+function stop() { $.audioPlayer.stop(); }
+
+$.tabGrp.addEventListener('close', function(e) { $.audioPlayer.stop(); });

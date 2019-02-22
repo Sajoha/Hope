@@ -3,7 +3,7 @@
 		<Tab id='tab1' title='Media' icon='KS_nav_views.png'>
 			<Window id='win1' class='win'>
 				<LeftNavButton platform=ios>
-					<Button title="Close" onClick="closeWindow" />
+					<Button title='Close' onClick='closeWindow' />
 				</LeftNavButton>
 				<View id='info'>
 					<Label id='preacher' class='data' />
@@ -20,12 +20,22 @@
 						<Label id='views' class='rightText' />
 					</View>
 				</View>
+				<View id='media'>
+					<View id='mediaControls'>
+						<Button id='restart' class='mediaControl' title='⏮' onClick='restart' />
+						<Button id='play' class='mediaControl' title='▶️' onClick='play' />
+						<Button id='pause' class='mediaControl' title='⏸' onClick='pause' />
+						<Button id='stop' class='mediaControl' title='⏹' onClick='stop' />
+					</View>
+					<ProgressBar id='progress' />
+					<AudioPlayer id='audioPlayer' />
+				</View>
 			</Window>
 		</Tab>
 		<Tab id='tab2' title='Passage' icon='KS_nav_views.png'>
 			<Window id='win2' class='win'>
 				<LeftNavButton platform=ios>
-					<Button title="Close" onClick="closeWindow" />
+					<Button title='Close' onClick='closeWindow' />
 				</LeftNavButton>
 				<ScrollView>
 					<Label id='biblePassage' />

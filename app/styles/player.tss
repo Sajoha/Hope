@@ -3,11 +3,6 @@
   backgroundColor: '#FDF5E8'
 }
 
-'#title': {
-  top: '5%',
-  font: { fontSize: 30 }
-}
-
 '#info': {
   top: '2%',
   height: '16%',
@@ -36,19 +31,37 @@
 }
 
 '#media': {
-  backgroundColor: 'red',
+  top: '3%',
+  height: '20%',
+  layout: 'vertical'
+}
+
+'#mediaControls': {
+  height: '50%',
+  layout: 'horizontal'
+}
+
+'.mediaControl': {
+  width: '25%',
+  height: Ti.UI.FILL,
+  font: { fontSize: 30 }
+}
+
+'#progress': {
+  height: '50%',
+  width: Ti.UI.FILL
+}
+
+'#audioPlayer': {
+  top: '2%',
   width: '96%',
-  height: '10%'
+  height: '78%',
+  visible: false
 }
 
 '#biblePassage': {
-  top: '5%',
+  top: '1%',
   width: '96%',
   height: Ti.UI.SIZE,
   font: { fontSize: 20 }
-}
-
-'#close': {
-  top: 10,
-  left: 10
 }
