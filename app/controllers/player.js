@@ -20,6 +20,8 @@ function setUI(passage) {
 
 	$.biblePassage.text = lib.parsePassage(passage.verses);
 
+	Ti.Media.setAudioSessionCategory(Ti.Media.AUDIO_SESSION_CATEGORY_PLAYBACK);
+
 	$.audioPlayer.url = data.link;
 }
 
