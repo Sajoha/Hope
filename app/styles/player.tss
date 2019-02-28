@@ -31,25 +31,53 @@
 }
 
 '#media': {
-  top: '3%',
+  top: '2%',
   height: '20%',
   layout: 'vertical'
 }
 
-'#mediaControls': {
+'.mediaContent': {
   height: '50%',
   layout: 'horizontal'
 }
 
 '.mediaControl': {
-  width: '25%',
-  height: Ti.UI.FILL,
-  font: { fontSize: 30 }
+  top: '2%',
+  font: { fontSize: 16 }
 }
 
-'#progress': {
-  height: '50%',
-  width: Ti.UI.FILL
+'.mediaText': {
+  top: '2%',
+  font: { fontSize: 12 }
+}
+
+'.controlContainer': {
+  left: '2%',
+  right: '2%',
+  width: '21%',
+  borderWidth: 3,
+  borderRadius: 10,
+  layout: 'vertical',
+  height: Ti.UI.FILL,
+  borderColor: 'blue',
+  backgroundColor: 'white'
+}
+
+'#timeLabel': {
+  left: '2%',
+  right: '1%',
+  width: '26%',
+  height: Ti.UI.FILL,
+  font: { fontSize: 14 }
+}
+
+'#slider': {
+  value: 0,
+  left: '1%',
+  right: '2%',
+  width: '68%',
+  height: Ti.UI.FILL,
+  thumbImage: '/images/dot.png'
 }
 
 '#audioPlayer': {

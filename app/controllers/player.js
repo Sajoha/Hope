@@ -1,6 +1,9 @@
 const
+	data = $.args.sermon,
 	lib = require('/lib'),
-	data = $.args.sermon;
+	moment = require('/alloy/moment');
+
+let state;
 
 function getMainPassage() {
 	lib.request({ url: `https://bible-api.com/${(data.passage).replace(/ /g, '')}?translation=kjv` })
@@ -20,22 +23,50 @@ function setUI(passage) {
 
 	$.biblePassage.text = lib.parsePassage(passage.verses);
 
-	Ti.Media.setAudioSessionCategory(Ti.Media.AUDIO_SESSION_CATEGORY_PLAYBACK);
+	Ti.Media.audioSessionCategory = Ti.Media.AUDIO_SESSION_CATEGORY_PLAYBACK;
 
 	$.audioPlayer.url = data.link;
+
+	const
+		durTime = moment($.audioPlayer.duration).format('mm:ss'),
+		lblStr = `00:00 / ${data.duration}`;
+
+	$.timeLabel.text = lblStr;
+
+	// Because for some reason it auto plays still
+	$.audioPlayer.stop();
 }
 
 function closeWindow() { $.tabGrp.close(); }
 
-function restart() {
-	$.audioPlayer.stop();
-	$.audioPlayer.start()
-}
+function back10() { $.audioPlayer.seekToTime($.audioPlayer.progress - 10000); }
 
 function play() { $.audioPlayer.start(); }
 
 function pause() { $.audioPlayer.pause(); }
 
-function stop() { $.audioPlayer.stop(); }
+function forward10() { $.audioPlayer.seekToTime($.audioPlayer.progress + 10000); }
 
-$.tabGrp.addEventListener('close', function(e) { $.audioPlayer.stop(); });
+$.tabGrp.addEventListener('close', (e) => { $.audioPlayer.stop(); });
+
+$.audioPlayer.addEventListener('progress', (e) => {
+	const
+		durTime = moment($.audioPlayer.duration).format('mm:ss'),
+		currTime = moment(e.progress).format('mm:ss'),
+		lblStr = `${currTime} / ${data.duration}`;
+
+	$.slider.setValue(e.progress / $.audioPlayer.duration);
+	$.timeLabel.text = lblStr;
+});
+
+$.slider.addEventListener('start', (e) => {
+	// Record the state before pausing, so we know what to do after touch has stopped
+	state = $.audioPlayer.state;
+	$.audioPlayer.pause();
+});
+
+$.slider.addEventListener('stop', (e) => {
+	$.audioPlayer.seekToTime(e.value * $.audioPlayer.duration);
+	// Resume playing if it already was in this state
+	if(state === 3) $.audioPlayer.start();
+});

@@ -1,6 +1,8 @@
 // The sermons page
 
-const lib = require('/lib');
+const
+	lib = require('/lib'),
+	moment = require('/alloy/moment');
 
 function refreshData() { getData(); }
 
@@ -48,7 +50,9 @@ function setUI(sermons, preachers, serviceType) {
 
 		(serviceIndex >= 0) ? service = serviceType[serviceIndex]['name']: service = 'Unknown';
 
-		const sermonDate = require('/alloy/moment').unix(sermon.sermon_date).format("DD/MM/YYYY");
+		const
+			sermonDate = moment.unix(sermon.sermon_date).format('DD/MM/YYYY'),
+			sermonDuration = moment(sermon.sermon_audio_duration, 'HH:mm:ss').format('mm:ss');
 
 		sermonData.push({
 			sermon: { text: sermon.title.rendered },
@@ -59,10 +63,10 @@ function setUI(sermons, preachers, serviceType) {
 				service: service,
 				preacher: preacher,
 				views: sermon._views,
+				duration: sermonDuration,
 				link: sermon.sermon_audio,
 				sermon: sermon.title.rendered,
-				passage: sermon.bible_passage,
-				duration: sermon.sermon_audio_duration
+				passage: sermon.bible_passage
 			},
 			properties: {
 				itemId: sermon.id,

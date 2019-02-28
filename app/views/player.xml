@@ -21,13 +21,28 @@
 					</View>
 				</View>
 				<View id='media'>
-					<View id='mediaControls'>
-						<Button id='restart' class='mediaControl' title='⏮' onClick='restart' />
-						<Button id='play' class='mediaControl' title='▶️' onClick='play' />
-						<Button id='pause' class='mediaControl' title='⏸' onClick='pause' />
-						<Button id='stop' class='mediaControl' title='⏹' onClick='stop' />
+					<View class='mediaContent'>
+						<View class='controlContainer'>
+							<Button id='restart' class='mediaControl' title='⏪' onClick='back10' />
+							<Label class='mediaText' text='Back 10s' />
+						</View>
+						<View class='controlContainer'>
+							<Button id='play' class='mediaControl' title='▶️' onClick='play' />
+							<Label class='mediaText' text='Play' />
+						</View>
+						<View class='controlContainer'>
+							<Button id='pause' class='mediaControl' title='⏸' onClick='pause' />
+							<Label class='mediaText' text='Pause' />
+						</View>
+						<View class='controlContainer'>
+							<Button id='stop' class='mediaControl' title='⏩' onClick='forward10' />
+							<Label class='mediaText' text='Forward 10s' />
+						</View>
 					</View>
-					<ProgressBar id='progress' />
+					<View class='mediaContent'>
+						<Label id='timeLabel' />
+						<Slider id='slider' />
+					</View>
 					<AudioPlayer id='audioPlayer' />
 				</View>
 			</Window>
