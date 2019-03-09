@@ -1,12 +1,23 @@
 '.container': {
   width: Ti.UI.FILL,
-  height: Ti.UI.FILL
+  height: Ti.UI.FILL,
+  backgroundColor: '#FDF5E8'
+}
+
+'#content': {
+  visible: false,
+  layout: 'vertical'
+}
+
+'#listview': {
+  backgroundColor: '#FDF5E8'
 }
 
 '.cell': {
   height: 55,
   width: '98%',
-  layout: 'vertical'
+  layout: 'vertical',
+  backgroundColor: '#FDF5E8'
 }
 
 '.title': {
@@ -28,4 +39,10 @@
   bottom: 0,
   width: Ti.UI.SIZE,
   font: { fontSize: 10 }
+}
+
+'#loading': {
+  visible: true,
+  message: 'Loading',
+  style: Ti.UI.ActivityIndicatorStyle.BIG_DARK
 }

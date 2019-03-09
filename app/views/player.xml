@@ -1,10 +1,10 @@
 <Alloy>
-	<TabGroup id='tabGrp' backgroundColor='white' onOpen='getMainPassage'>
-		<Tab id='tab1' title='Media' icon='KS_nav_views.png'>
-			<Window id='win1' class='win'>
-				<LeftNavButton platform=ios>
-					<Button title='Close' onClick='closeWindow' />
-				</LeftNavButton>
+	<NavigationWindow id='win' onOpen='getMainPassage'>
+		<Window id='window'>
+			<LeftNavButton platform=ios>
+				<Button title='Close' onClick='closeWindow' />
+			</LeftNavButton>
+			<View id='content' layout='vertical'>
 				<View id='info'>
 					<Label id='preacher' class='data' />
 
@@ -23,19 +23,19 @@
 				<View id='media'>
 					<View class='mediaContent'>
 						<View class='controlContainer'>
-							<Button id='restart' class='mediaControl' title='⏪' onClick='back10' />
+							<Button id='back' class='mediaControl' onClick='back10' image='/images/back.png' />
 							<Label class='mediaText' text='Back 10s' />
 						</View>
 						<View class='controlContainer'>
-							<Button id='play' class='mediaControl' title='▶️' onClick='play' />
+							<Button id='play' class='mediaControl' onClick='play' image='/images/play.png' />
 							<Label class='mediaText' text='Play' />
 						</View>
 						<View class='controlContainer'>
-							<Button id='pause' class='mediaControl' title='⏸' onClick='pause' />
+							<Button id='pause' class='mediaControl' onClick='pause' image='/images/pause.png' />
 							<Label class='mediaText' text='Pause' />
 						</View>
 						<View class='controlContainer'>
-							<Button id='stop' class='mediaControl' title='⏩' onClick='forward10' />
+							<Button id='forward' class='mediaControl' onClick='forward10' image='/images/forward.png' />
 							<Label class='mediaText' text='Forward 10s' />
 						</View>
 					</View>
@@ -45,17 +45,9 @@
 					</View>
 					<AudioPlayer id='audioPlayer' />
 				</View>
-			</Window>
-		</Tab>
-		<Tab id='tab2' title='Passage' icon='KS_nav_views.png'>
-			<Window id='win2' class='win'>
-				<LeftNavButton platform=ios>
-					<Button title='Close' onClick='closeWindow' />
-				</LeftNavButton>
-				<ScrollView>
-					<Label id='biblePassage' />
-				</ScrollView>
-			</Window>
-		</Tab>
-	</TabGroup>
+				<ScrollableView id='scrollable' />
+			</View>
+			<ActivityIndicator id='loading' />
+		</Window>
+	</NavigationWindow>
 </Alloy>

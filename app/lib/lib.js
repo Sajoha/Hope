@@ -32,6 +32,8 @@ function parsePassage(verses) {
 		chapter = -1;
 
 	for(const verse of verses) {
+		if(passage !== '') passage = passage + '\n';
+
 		if(verse.chapter !== chapter) {
 			chapter = verse.chapter;
 			passage = passage + `${convertNum(verse.chapter)}\u207B`;

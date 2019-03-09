@@ -1,6 +1,10 @@
-'.win': {
-  layout: 'vertical',
+'#win': {
   backgroundColor: '#FDF5E8'
+}
+
+'#content': {
+  visible: false,
+  layout: 'vertical'
 }
 
 '#info': {
@@ -42,8 +46,9 @@
 }
 
 '.mediaControl': {
-  top: '2%',
-  font: { fontSize: 16 }
+  top: '10%',
+  width: '50%',
+  height: '65%'
 }
 
 '.mediaText': {
@@ -55,11 +60,9 @@
   left: '2%',
   right: '2%',
   width: '21%',
-  borderWidth: 3,
+  height: '98%',
   borderRadius: 10,
   layout: 'vertical',
-  height: Ti.UI.FILL,
-  borderColor: 'blue',
   backgroundColor: 'white'
 }
 
@@ -92,4 +95,14 @@
   width: '96%',
   height: Ti.UI.SIZE,
   font: { fontSize: 20 }
+}
+
+'#scrollable': {
+  height: '60%'
+}
+
+'#loading': {
+  visible: true,
+  message: 'Loading',
+  style: Ti.UI.ActivityIndicatorStyle.BIG_DARK
 }

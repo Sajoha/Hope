@@ -1,6 +1,6 @@
 <Alloy>
-	<Window id='win' class='container' title='Sermons' backgroundColor='white' onOpen='getData'>
-		<View layout='vertical'>
+	<Window id='win' class='container' title='Sermons' onOpen='getData'>
+		<View id='content'>
 			<ListView id='listview' defaultItemTemplate='SermonCell' onItemclick='handleListItemClick'>
 				<ListSection id='section' />
 				<Templates>
@@ -17,6 +17,6 @@
 				<RefreshControl id="refresh" onRefreshstart="refreshData" />
 			</ListView>
 		</View>
-		<ActivityIndicator id="activityIndicator" message="Loading..." middle='0' />
+		<ActivityIndicator id='loading' />
 	</Window>
 </Alloy>

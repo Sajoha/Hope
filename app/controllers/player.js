@@ -6,22 +6,30 @@ const
 let state;
 
 function getMainPassage() {
-	lib.request({ url: `https://bible-api.com/${(data.passage).replace(/ /g, '')}?translation=kjv` })
-		.then(data => setUI(JSON.parse(data)))
+
+	const arr = [];
+
+	data.books.forEach(book => {
+		arr.push(new Promise((resolve, reject) => {
+			lib.request({ url: `https://bible-api.com/${book.replace(/ /g, '')}?translation=kjv` })
+				.then(data => resolve(JSON.parse(data)))
+				.catch(err => reject(err));
+		}));
+	});
+
+	Promise.all(arr)
+		.then(values => setUI(values))
 		.catch(err => console.log(err));
 }
 
-function setUI(passage) {
-	$.win1.title = data.sermon;
-	$.win2.title = data.passage;
+function setUI(passages) {
+	$.window.title = data.sermon;
 	$.preacher.text = `Preacher: ${data.preacher}`;
 	$.passage.text = `Main Passage: ${data.passage}`;
 	$.date.text = `Date: ${data.date}`;
 	$.time.text = `Time: ${data.service}`;
 	$.length.text = `Duration: ${data.duration}`;
 	$.views.text = `View Count: ${data.views}`;
-
-	$.biblePassage.text = lib.parsePassage(passage.verses);
 
 	Ti.Media.audioSessionCategory = Ti.Media.AUDIO_SESSION_CATEGORY_PLAYBACK;
 
@@ -35,9 +43,46 @@ function setUI(passage) {
 
 	// Because for some reason it auto plays still
 	$.audioPlayer.stop();
+
+	$.loading.visible = false;
+	$.content.visible = true;
+
+	passages.forEach(passage => {
+		const view = Ti.UI.createView({
+			width: Ti.UI.FILL,
+			height: Ti.UI.FILL,
+			layout: 'vertical'
+		});
+
+		const passageTitle = Ti.UI.createLabel({
+			left: '2%',
+			height: '8%',
+			text: passage.reference,
+			font: { fontSize: 20 }
+		});
+
+		const scroll = Ti.UI.createScrollView({
+			height: '92%',
+			layout: 'vertical'
+		});
+
+		const passageText = Ti.UI.createLabel({
+			text: lib.parsePassage(passage.verses),
+			font: { fontSize: 14 },
+			height: Ti.UI.FILL,
+			width: '96%'
+		});
+
+		scroll.add(passageText);
+
+		view.add(passageTitle);
+		view.add(scroll);
+
+		$.scrollable.addView(view);
+	});
 }
 
-function closeWindow() { $.tabGrp.close(); }
+function closeWindow() { $.win.close(); }
 
 function back10() { $.audioPlayer.seekToTime($.audioPlayer.progress - 10000); }
 
@@ -47,7 +92,7 @@ function pause() { $.audioPlayer.pause(); }
 
 function forward10() { $.audioPlayer.seekToTime($.audioPlayer.progress + 10000); }
 
-$.tabGrp.addEventListener('close', (e) => { $.audioPlayer.stop(); });
+$.win.addEventListener('close', (e) => { $.audioPlayer.stop(); });
 
 $.audioPlayer.addEventListener('progress', (e) => {
 	const
