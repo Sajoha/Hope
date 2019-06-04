@@ -1,20 +1,50 @@
-"#mapview": {
-  top: '0dp',
-  height: '100%',
-  width: Ti.UI.FILL,
-  userLocation: true,
-  region: {
-    latitude: 53.289818,
-    longitude: -6.242318,
-    latitudeDelta: 0.01,
-    longitudeDelta: 0.01
+'.title': {
+  top: '3%',
+  font: {
+    fontSize: 22,
+    fontWeight: 'semibold'    
   }
 }
 
-"#hope": {
-  latitude: 53.289818,
-  longitude: -6.242318,
-  title: 'Hope Baptist Church',
-  subtitle: 'Taney Hall, Eglinton Terrace, Dundrum, Dublin 14, D14 C7F7',
-  pincolor: Alloy.Globals.Map.ANNOTATION_RED
+'#addressLbl': {
+  text: 'Taney Hall,\n3 Eglinton Terrace, Dundrum,\nDublin 14, D14 C7F7',
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+  font: { fontSize: 14 }
+}
+
+'#emailLbl': {
+  text: 'daniel.canavan@me.com',
+  font: { fontSize: 14 }
+}
+
+'#phoneLbl': {
+  text: '01-294-1696',
+  font: { fontSize: 14 }
+}
+
+'#img': {
+  top: '3%',
+  width: '95%',
+  borderRadius: 10,
+  image: '/images/interior.png' 
+}
+
+'#mapBtn': {
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+  color: 'black',
+  text: 'Show On Map',
+  font: { fontSize: '20dp' },
+  top: '2%',
+	width: '95%',
+	height: '8%',
+	borderRadius: 26,
+	backgroundGradient: {
+		type: 'linear',
+		startPoint: { x: '50%', y: '0%' },
+		endPoint: { x: '50%', y: '100%' },
+		colors: [
+			{ color: '#EB8028', offset: 0.0 },
+			{ color: '#F4E626', offset: 1.0 }
+		]
+	}
 }

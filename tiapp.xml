@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ti:app xmlns:ti="http://ti.appcelerator.org">
+<ti:app 
+  xmlns:ti="http://ti.appcelerator.org">
   <id>com.hope</id>
   <name>Hope</name>
   <version>1.0</version>
   <publisher>not specified</publisher>
   <url>unspecified</url>
-  <description />
+  <description/>
   <copyright>not specified</copyright>
   <icon>appicon.png</icon>
   <fullscreen>false</fullscreen>
@@ -37,20 +38,22 @@
           <string>UIInterfaceOrientationLandscapeRight</string>
         </array>
         <key>UIRequiresPersistentWiFi</key>
-        <false />
+        <false/>
         <key>UIPrerenderedIcon</key>
-        <false />
+        <false/>
         <key>UIStatusBarHidden</key>
-        <false />
+        <false/>
         <key>UIStatusBarStyle</key>
         <string>UIStatusBarStyleDefault</string>
       </dict>
     </plist>
   </ios>
-  <android xmlns:android="http://schemas.android.com/apk/res/android">
-    <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1">
+  <android 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <manifest 
+      xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1">
       <application>
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="YOUR_API_KEY" />
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="YOUR_API_KEY"/>
       </application>
     </manifest>
   </android>
@@ -63,7 +66,7 @@
     <target device="ipad">true</target>
     <target device="iphone">true</target>
   </deployment-targets>
-  <sdk-version>8.0.0.v20190214095044</sdk-version>
+  <sdk-version>8.0.1.GA</sdk-version>
   <plugins>
     <plugin version="1.0">ti.alloy</plugin>
   </plugins>

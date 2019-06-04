@@ -1,53 +1,56 @@
 <Alloy>
 	<NavigationWindow id='win' onOpen='getMainPassage'>
 		<Window id='window'>
-			<LeftNavButton platform=ios>
-				<Button title='Close' onClick='closeWindow' />
+			<LeftNavButton platform="ios">
+				<Button title='Close' onClick='closeWindow'/>
 			</LeftNavButton>
 			<View id='content' layout='vertical'>
 				<View id='info'>
-					<Label id='preacher' class='data' />
+					<Label id='preacher' class='data'/>
 
-					<Label id='passage' class='data' />
+					<Label id='passage' class='data'/>
 					<View class='data'>
-						<Label id='date' class='leftText' />
+						<Label id='date' class='leftText'/>
 
-						<Label id='time' class='rightText' />
+						<Label id='time' class='rightText'/>
 					</View>
 					<View class='data'>
-						<Label id='length' class='leftText' />
+						<Label id='length' class='leftText'/>
 
-						<Label id='views' class='rightText' />
+						<Label id='views' class='rightText'/>
 					</View>
 				</View>
 				<View id='media'>
 					<View class='mediaContent'>
 						<View class='controlContainer'>
-							<Button id='back' class='mediaControl' onClick='back10' image='/images/back.png' />
-							<Label class='mediaText' text='Back 10s' />
+							<Button id='back' class='mediaControl' onClick='back10' image='/images/back.png'/>
+							<Label class='mediaText' text='Back 10s'/>
 						</View>
 						<View class='controlContainer'>
-							<Button id='play' class='mediaControl' onClick='play' image='/images/play.png' />
-							<Label class='mediaText' text='Play' />
+							<Button id='play' class='mediaControl' onClick='play' image='/images/play.png'/>
+							<Label class='mediaText' text='Play'/>
 						</View>
 						<View class='controlContainer'>
-							<Button id='pause' class='mediaControl' onClick='pause' image='/images/pause.png' />
-							<Label class='mediaText' text='Pause' />
+							<Button id='pause' class='mediaControl' onClick='pause' image='/images/pause.png'/>
+							<Label class='mediaText' text='Pause'/>
 						</View>
 						<View class='controlContainer'>
-							<Button id='forward' class='mediaControl' onClick='forward10' image='/images/forward.png' />
-							<Label class='mediaText' text='Forward 10s' />
+							<Button id='forward' class='mediaControl' onClick='forward10' image='/images/forward.png'/>
+							<Label class='mediaText' text='Forward 10s'/>
 						</View>
 					</View>
 					<View class='mediaContent'>
-						<Label id='timeLabel' />
-						<Slider id='slider' />
+						<Label id='timeLabel'/>
+						<Slider id='slider'/>
 					</View>
-					<AudioPlayer id='audioPlayer' />
+					<AudioPlayer id='audioPlayer'/>
 				</View>
-				<ScrollableView id='scrollable' />
+				<ScrollView id='biblePassage'>
+					<Label id='bibleTitle'/>
+					<Label id='bibleText'/>
+				</ScrollView>
 			</View>
-			<ActivityIndicator id='loading' />
+			<ActivityIndicator id='loading'/>
 		</Window>
 	</NavigationWindow>
 </Alloy>

@@ -12,7 +12,7 @@ function refreshData() {
 
 function getData() {
 	const getSermons = new Promise((resolve, reject) => {
-		lib.request({ url: 'http://hope.ie/wp-json/wp/v2/wpfc_sermon?per_page=20' })
+		lib.request({ url: 'http://hope.ie/wp-json/wp/v2/wpfc_sermon?per_page=15' })
 			.then(data => resolve(JSON.parse(data)))
 			.catch(err => reject(err));
 	});
@@ -29,18 +29,12 @@ function getData() {
 			.catch(err => reject(err));
 	});
 
-	const getBooks = new Promise((resolve, reject) => {
-		lib.request({ url: 'http://hope.ie/wp-json/wp/v2/wpfc_bible_book' })
-			.then(data => resolve(JSON.parse(data)))
-			.catch(err => reject(err));
-	});
-
-	Promise.all([getSermons, getPreachers, getServices, getBooks])
+	Promise.all([getSermons, getPreachers, getServices])
 		.then(values => setUI(values[0], values[1], values[2], values[3]))
 		.catch(err => console.error(err));
 }
 
-function setUI(sermons, preachers, serviceType, bookIds) {
+function setUI(sermons, preachers, serviceType) {
 	$.refresh.endRefreshing();
 
 	const sermonData = [];
@@ -58,16 +52,6 @@ function setUI(sermons, preachers, serviceType, bookIds) {
 
 		(serviceIndex >= 0) ? service = serviceType[serviceIndex]['name']: service = 'Unknown';
 
-		const books = [sermon.bible_passage];
-
-		sermon.wpfc_bible_book.forEach(id => {
-			const
-				bookId = bookIds.indexOf(bookIds.find(x => x.id === id)),
-				bookName = (bookIds[bookId]).name;
-
-			books.push(bookName)
-		});
-
 		const
 			sermonDate = moment.unix(sermon.sermon_date).format('DD/MM/YYYY'),
 			sermonDuration = moment(sermon.sermon_audio_duration, 'HH:mm:ss').format('mm:ss');
@@ -77,13 +61,13 @@ function setUI(sermons, preachers, serviceType, bookIds) {
 			preacher: { text: `Preacher: ${preacher}` },
 			passage: { text: `Passage: ${sermon.bible_passage}` },
 			data: {
-				books: books,
 				date: sermonDate,
 				service: service,
 				preacher: preacher,
 				views: sermon._views,
 				duration: sermonDuration,
 				link: sermon.sermon_audio,
+				book: sermon.bible_passage,
 				sermon: sermon.title.rendered,
 				passage: sermon.bible_passage
 			},
@@ -95,8 +79,8 @@ function setUI(sermons, preachers, serviceType, bookIds) {
 	});
 
 	$.loading.hide();
-	$.section.setItems(sermonData);
-	$.listview.setSections([$.section]);
+	$.section.items = sermonData;
+	$.listview.sections = [$.section];
 	$.content.show();
 }
 

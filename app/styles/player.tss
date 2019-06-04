@@ -16,21 +16,21 @@
 '.data': {
   width: '96%',
   height: '25%',
-  font: { fontSize: 14 },
+  font: { fontSize: 16 },
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '.leftText': {
   left: 0,
   width: '50%',
-  font: { fontSize: 14 },
+  font: { fontSize: 16 },
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '.rightText': {
   left: '50%',
   width: '50%',
-  font: { fontSize: 14 },
+  font: { fontSize: 16 },
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
@@ -69,16 +69,16 @@
 '#timeLabel': {
   left: '2%',
   right: '1%',
-  width: '26%',
+  width: '28%',
   height: Ti.UI.FILL,
-  font: { fontSize: 14 }
+  font: { fontSize: 16 }
 }
 
 '#slider': {
   value: 0,
   left: '1%',
   right: '2%',
-  width: '68%',
+  width: '66%',
   height: Ti.UI.FILL,
   thumbImage: '/images/dot.png'
 }
@@ -91,14 +91,23 @@
 }
 
 '#biblePassage': {
-  top: '1%',
-  width: '96%',
-  height: Ti.UI.SIZE,
-  font: { fontSize: 20 }
+  height: '60%',
+  layout: 'vertical'
 }
 
-'#scrollable': {
-  height: '60%'
+'#bibleTitle': {
+  left: '2%',
+  font: {
+    fontSize: 20,
+    fontWeight: 'semibold'
+  }
+}
+
+'#bibleText': {
+  top: '2%',
+  width: '96%',
+  height: Ti.UI.SIZE,
+  font: { fontSize: 16 }
 }
 
 '#loading': {

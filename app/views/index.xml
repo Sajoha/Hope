@@ -1,36 +1,32 @@
 <Alloy>
 	<NavigationWindow backgroundColor="white">
 		<Window class='container' navBarHidden='true'>
-			<ImageView id='img' />
+			<ImageView id='img'/>
 			<ScrollView class='cellContainer'>
 				<View class='titleView'>
-					<ImageView class='title' image='/images/logo.png' />
+					<ImageView class='title' image='/images/logo.png'/>
 				</View>
 
-				<View id='spacer' height='10%' />
+				<View id='spacer' height='10%'/>
 
 				<View class='cell' onClick='openSermons'>
-					<Label class='button' text='Sermons' />
+					<Label class='button' text='Sermons'/>
 				</View>
 
 				<View class='cell' onClick='openEvents'>
-					<Label class='button' text='Upcoming Events' />
+					<Label class='button' text='Upcoming Events'/>
 				</View>
 
 				<View class='cell' onClick='openFind'>
-					<Label class='button' text='Find Us' />
+					<Label class='button' text='Find Us'/>
 				</View>
 
 				<View class='cell' onClick='openAbout'>
-					<Label class='button' text='About Us' />
+					<Label class='button' text='About Us'/>
 				</View>
 
 				<View class='cell' onClick='openPastor'>
-					<Label class='button' text='Our Pastor' />
-				</View>
-
-				<View class='cell'>
-					<Label class='button' text='Choir' />
+					<Label class='button' text='Our Pastor'/>
 				</View>
 			</ScrollView>
 		</Window>

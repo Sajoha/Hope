@@ -6,23 +6,14 @@ const
 let state;
 
 function getMainPassage() {
-
-	const arr = [];
-
-	data.books.forEach(book => {
-		arr.push(new Promise((resolve, reject) => {
-			lib.request({ url: `https://bible-api.com/${book.replace(/ /g, '')}?translation=kjv` })
-				.then(data => resolve(JSON.parse(data)))
-				.catch(err => reject(err));
-		}));
+	return new Promise((resolve, reject) => {
+		lib.request({ url: `https://bible-api.com/${data.book.replace(/ /g, '')}?translation=kjv` })
+			.then(data => setUI(JSON.parse(data)))
+			.catch(err => reject(err));
 	});
-
-	Promise.all(arr)
-		.then(values => setUI(values))
-		.catch(err => console.log(err));
 }
 
-function setUI(passages) {
+function setUI(passage) {
 	$.window.title = data.sermon;
 	$.preacher.text = `Preacher: ${data.preacher}`;
 	$.passage.text = `Main Passage: ${data.passage}`;
@@ -41,45 +32,14 @@ function setUI(passages) {
 
 	$.timeLabel.text = lblStr;
 
+	$.bibleTitle.text = passage.reference;
+	$.bibleText.text = lib.parsePassage(passage.verses);
+
 	// Because for some reason it auto plays still
 	$.audioPlayer.stop();
 
 	$.loading.visible = false;
 	$.content.visible = true;
-
-	passages.forEach(passage => {
-		const view = Ti.UI.createView({
-			width: Ti.UI.FILL,
-			height: Ti.UI.FILL,
-			layout: 'vertical'
-		});
-
-		const passageTitle = Ti.UI.createLabel({
-			left: '2%',
-			height: '8%',
-			text: passage.reference,
-			font: { fontSize: 20 }
-		});
-
-		const scroll = Ti.UI.createScrollView({
-			height: '92%',
-			layout: 'vertical'
-		});
-
-		const passageText = Ti.UI.createLabel({
-			text: lib.parsePassage(passage.verses),
-			font: { fontSize: 14 },
-			height: Ti.UI.FILL,
-			width: '96%'
-		});
-
-		scroll.add(passageText);
-
-		view.add(passageTitle);
-		view.add(scroll);
-
-		$.scrollable.addView(view);
-	});
 }
 
 function closeWindow() { $.win.close(); }
