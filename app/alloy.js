@@ -10,4 +10,22 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
-Alloy.Globals.Map = require('ti.map');
+const
+	converter = 'https://ical-to-json.herokuapp.com/convert.json',
+	calendar = 'webcal://p71-calendars.icloud.com/published/2/AAAAAAAAAAAAAAAAAAAAAHFD-f9dJNH5biZqhakqUrFnvlxGFs7r2SacLByirRvAwnUySeTP5UZdtRt2QlDTUmovGoixYpy2ps-6mQ9TJfA';
+
+const
+	hope = 'http://hope.ie',
+	sermons = 'wpfc_sermon?per_page=15',
+	preachers = 'wpfc_preacher',
+	services = 'wpfc_service_type';
+
+// Links
+Alloy.Globals.calConvert = `${converter}?url=${calendar}`;
+Alloy.Globals.getSermons = `${hope}/wp-json/wp/v2/${sermons}`;
+Alloy.Globals.getServices = `${hope}/wp-json/wp/v2/${services}`;
+Alloy.Globals.getPreachers = `${hope}/wp-json/wp/v2/${preachers}`;
+
+// Colours
+Alloy.Globals.backColour = '#FDF5E8';
+Alloy.Globals.accentColour = '#40E0D0';

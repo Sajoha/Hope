@@ -14,7 +14,6 @@ function request({ url, body, headers = {}, method = 'GET' }) {
 		// Prepare the connection.
 		client.open(method, url);
 		for(const [headerName, value] of Object.entries(headers)) {
-			// console.log(headerName);
 			client.setRequestHeader(headerName, value);
 		}
 		// Send the request.
@@ -45,6 +44,54 @@ function parsePassage(verses) {
 	}
 
 	return passage;
+}
+
+function parseEvents(events) {
+	// We need moment for time formatting
+	const moment = require('/alloy/moment');
+
+	return new Promise(resolve => {
+		const
+			parsed = [],
+			now = moment().format('X');
+
+		let count = 0;
+
+		// The information isn't returned in the right order, sort in chronologically
+		// FIXME: This will be some heavy computation when the calendar fills up
+		events.sort((a, b) => {
+			const
+				aStart = moment(a.dtstart[0]).format('X'),
+				bStart = moment(b.dtstart[0]).format('X');
+
+			return aStart - bStart;
+		});
+
+		for(const event of events) {
+			const
+				start = moment(event.dtstart[0]).format('X'),
+				end = moment(event.dtend[0]).format('X');
+
+			// Don't add old events
+			if(end < now) { continue; }
+
+			// Once we've populated 10 events, exit
+			if(count >= 10) { break; }
+
+			parsed.push({
+				title: event.summary,
+				desc: event.description,
+				loc: event.location,
+				url: event.url,
+				start: start,
+				end: end
+			});
+
+			count++;
+		}
+
+		resolve(parsed);
+	});
 }
 
 function convertNum(num) {
@@ -88,5 +135,6 @@ function getChar(digit) {
 
 module.exports = {
 	request,
+	parseEvents,
 	parsePassage
 }

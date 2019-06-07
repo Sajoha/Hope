@@ -35,10 +35,10 @@
   text: 'Test',
   height: '30%',
   width: '60%',
-  borderColor: '#40E0D0',
+  borderColor: Alloy.Globals.accentColour,
   borderWidth: 2,
   borderRadius: 10,
-  color: '#40E0D0',
+  color: Alloy.Globals.accentColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 

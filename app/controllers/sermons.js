@@ -12,19 +12,19 @@ function refreshData() {
 
 function getData() {
 	const getSermons = new Promise((resolve, reject) => {
-		lib.request({ url: 'http://hope.ie/wp-json/wp/v2/wpfc_sermon?per_page=15' })
+		lib.request({ url: Alloy.Globals.getSermons })
 			.then(data => resolve(JSON.parse(data)))
 			.catch(err => reject(err));
 	});
 
 	const getPreachers = new Promise((resolve, reject) => {
-		lib.request({ url: 'http://hope.ie/wp-json/wp/v2/wpfc_preacher' })
+		lib.request({ url: Alloy.Globals.getPreachers })
 			.then(data => resolve(JSON.parse(data)))
 			.catch(err => reject(err));
 	});
 
 	const getServices = new Promise((resolve, reject) => {
-		lib.request({ url: 'http://hope.ie/wp-json/wp/v2/wpfc_service_type' })
+		lib.request({ url: Alloy.Globals.getServices })
 			.then(data => resolve(JSON.parse(data)))
 			.catch(err => reject(err));
 	});

@@ -1,5 +1,26 @@
 <Alloy>
-  <Window class='container' title='Events' backgroundColor='white'>
-    <WebView url='https://hope.ie/connect/events/'/>
+  <Window class='container' title='Upcoming Events' onOpen='getEvents'>
+    <View id='content'>
+      <ListView id='listview' defaultItemTemplate='eventCell' onItemclick='handleListItemClick'>
+        <ListSection id='section' />
+        <Templates>
+          <ItemTemplate name='eventCell'>
+            <View class='cellContainer'>
+              <View class='cell'>
+                <View class='data'>
+                  <Label id='day' bindId='day' />
+                  <Label id='date' bindId='date' />
+                  <Label id='time' bindId='time' />
+                </View>
+                <View id='line' />
+                <Label class='title' bindId='name' />
+              </View>
+            </View>
+          </ItemTemplate>
+        </Templates>
+        <RefreshControl id="refresh" onRefreshstart="refreshData" />
+      </ListView>
+    </View>
+    <ActivityIndicator id='loading' />
   </Window>
 </Alloy>

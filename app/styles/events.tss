@@ -1,0 +1,89 @@
+'.container': {
+  width: Ti.UI.FILL,
+  height: Ti.UI.FILL,
+  backgroundColor: Alloy.Globals.backColour
+}
+
+'#content': {
+  visible: false,
+  layout: 'vertical'
+}
+
+'#listview': {
+  backgroundColor: Alloy.Globals.backColour,
+  separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE
+}
+
+'.cellContainer': {
+  height: Ti.UI.SIZE,
+  width: Ti.UI.FILL,
+  backgroundColor: Alloy.Globals.backColour
+}
+
+'.cell': {
+  top: 9,
+  height: 80,
+  width: '95%',
+  borderWidth: 3,
+  borderRadius: 10,
+  layout: 'horizontal',
+  backgroundColor: 'white',
+  borderColor: Alloy.Globals.accentColour
+}
+
+'.title': {
+  center: 0,
+  width: '74%',
+  height: Ti.UI.FILL,
+  font: { fontSize: 22 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+'.data': {
+  top: 3,
+  width: '25%',
+  height: Ti.UI.FILL,
+  layout: 'vertical'
+}
+
+'#line': {
+  width: 1,
+  height: '70%',
+  backgroundColor: Alloy.Globals.accentColour
+}
+
+'#day': {
+  top: 8,
+  center: 0,
+  width: Ti.UI.SIZE,
+  font: { fontSize: 24 }
+}
+
+'#date': {
+  top: '5%',
+  center: 0,
+  width: Ti.UI.SIZE,
+  font: { fontSize: 10 }
+}
+
+'#time': {
+  top: '3%',
+  center: 0,
+  width: Ti.UI.SIZE,
+  font: { fontSize: 10 }
+}
+
+'#loading': {
+  visible: true,
+  message: 'Loading',
+  color: Alloy.Globals.accentColour,
+  indicatorColor: Alloy.Globals.accentColour,
+  font: {
+    fontSize: 20,
+    fontWeight: 'semi-bold'
+   }
+}
+
+'#refresh': {
+  tintColor: Alloy.Globals.accentColour
+}
