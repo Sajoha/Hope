@@ -5,11 +5,15 @@
 				<ListSection id='section' />
 				<Templates>
 					<ItemTemplate name='SermonCell'>
-						<View class='cell'>
-							<Label class='title' bindId='sermon' />
-							<View class='data'>
-								<Label class='label' bindId='preacher' />
-								<Label class='label' bindId='passage' />
+						<View class='cellContainer'>
+							<View class='cell'>
+								<Label id='sermon' bindId='sermon' />
+								<View id='hLine' />
+								<View class='data'>
+									<Label id='preacher' bindId='preacher' />
+									<View id='vLine' />
+									<Label id='passage' bindId='passage' />
+								</View>
 							</View>
 						</View>
 					</ItemTemplate>

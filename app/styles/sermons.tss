@@ -1,7 +1,7 @@
 '.container': {
   width: Ti.UI.FILL,
   height: Ti.UI.FILL,
-  backgroundColor: '#FDF5E8'
+  backgroundColor: Alloy.Globals.backColour
 }
 
 '#content': {
@@ -10,39 +10,87 @@
 }
 
 '#listview': {
-  backgroundColor: '#FDF5E8'
+  backgroundColor: Alloy.Globals.backColour,
+  separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE
+}
+
+'.cellContainer': {
+  height: Ti.UI.SIZE,
+  width: Ti.UI.FILL,
+  backgroundColor: Alloy.Globals.backColour
 }
 
 '.cell': {
-  height: 55,
-  width: '98%',
+  top: 4,
+  bottom: 4,
+  height: 65,
+  width: '95%',
+  borderWidth: 3,
+  borderRadius: 10,
   layout: 'vertical',
-  backgroundColor: '#FDF5E8'
+  backgroundColor: 'white',
+  borderColor: Alloy.Globals.accentColour
 }
 
-'.title': {
+'#sermon': {
+  center: {
+    x: '50%',
+    y: '50%'
+  },
   top: 5,
-  left: 5,
-  font: { fontSize: 22 }
+  height: '47%',
+  font: { fontSize: 20 }
+}
+
+'#hLine': {
+  height: 1,
+  width: '85%',
+  backgroundColor: Alloy.Globals.accentColour
 }
 
 '.data': {
-  top: 3,
   height: '40%',
-  width: Ti.UI.Fill,
-  layout: 'horizontal'
+  width: Ti.UI.Fill
 }
 
-'.label': {
-  left: 5,
-  right: 5,
-  bottom: 0,
-  width: Ti.UI.SIZE,
-  font: { fontSize: 10 }
+'#preacher': {
+  center: {
+    x: '25%',
+    y: '50%'
+  },
+  width: '50%',
+  font: { fontSize: 10 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+'#vLine': {
+  center: {
+    x: '50%',
+    y: '50%'
+  },
+  width: 1,
+  height: '50%',
+  backgroundColor: Alloy.Globals.accentColour
+}
+
+'#passage': {
+  center: {
+    x: '75%',
+    y: '50%'
+  },
+  width: '50%',
+  font: { fontSize: 10 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '#loading': {
   visible: true,
   message: 'Loading',
-  style: Ti.UI.ActivityIndicatorStyle.BIG_DARK
+  color: Alloy.Globals.accentColour,
+  indicatorColor: Alloy.Globals.accentColour,
+  font: { fontSize: 20 }
+}
+
+'#refresh': {
+  tintColor: Alloy.Globals.accentColour
 }

@@ -4,11 +4,7 @@ const
 	lib = require('/lib'),
 	moment = require('/alloy/moment');
 
-function refreshData() {
-	$.content.hide();
-	$.loading.show();
-	getData();
-}
+function refreshData() { getData(); }
 
 function getData() {
 	const getSermons = new Promise((resolve, reject) => {

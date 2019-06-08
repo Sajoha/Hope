@@ -21,7 +21,8 @@
 }
 
 '.cell': {
-  top: 9,
+  top: 4,
+  bottom: 4,
   height: 80,
   width: '95%',
   borderWidth: 3,
@@ -40,7 +41,6 @@
 }
 
 '.data': {
-  top: 3,
   width: '25%',
   height: Ti.UI.FILL,
   layout: 'vertical'
@@ -53,7 +53,7 @@
 }
 
 '#day': {
-  top: 8,
+  top: '11%',
   center: 0,
   width: Ti.UI.SIZE,
   font: { fontSize: 24 }
@@ -78,10 +78,7 @@
   message: 'Loading',
   color: Alloy.Globals.accentColour,
   indicatorColor: Alloy.Globals.accentColour,
-  font: {
-    fontSize: 20,
-    fontWeight: 'semi-bold'
-   }
+  font: { fontSize: 20 }
 }
 
 '#refresh': {

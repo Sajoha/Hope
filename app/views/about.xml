@@ -1,55 +1,55 @@
 <Alloy>
-  <TabGroup id='tabgrp' backgroundColor='#FDF5E8'>
+  <TabGroup id='tabgrp'>
     <Tab id='tab1' title='Activities' icon='/images/calendar.png'>
       <Window class='container'>
         <LeftNavButton platform='ios'>
-          <Button title='Back' onClick='closeWindow'/>
+          <Button title='Back' onClick='closeWindow' />
         </LeftNavButton>
         <ScrollView class='scroll'>
-          <Label class='title' text='Services'/>
-          <Label id='servicesText'/>
-          <Label id='servicesTimes'/>
-          <Label class='title' text='Additional Studies' top='3%'/>
-          <Label id='additionalText'/>
-          <Label id='additionalTimes'/>
-          <Label class='title' text='English Language Classes' top='3%'/>
-          <Label id='englishText'/>
-          <Label id='englishTimes'/>
+          <Label class='title' text='Services' />
+          <Label id='servicesText' />
+          <Label id='servicesTimes' />
+          <Label class='title' text='Additional Studies' top='3%' />
+          <Label id='additionalText' />
+          <Label id='additionalTimes' />
+          <Label class='title' text='English Language Classes' top='3%' />
+          <Label id='englishText' />
+          <Label id='englishTimes' />
         </ScrollView>
       </Window>
     </Tab>
     <Tab id='tab2' title='Beliefs' icon='/images/bible.png'>
       <Window class='container'>
         <LeftNavButton platform='ios'>
-          <Button title='Back' onClick='closeWindow'/>
+          <Button title='Back' onClick='closeWindow' />
         </LeftNavButton>
         <ScrollView class='scroll'>
-          <Label class='title' text='Our Beliefs'/>
-          <Label id='beliefsText'/>
+          <Label class='title' text='Our Beliefs' />
+          <Label id='beliefsText' />
         </ScrollView>
       </Window>
     </Tab>
     <Tab id='tab3' title='Socials' icon='/images/socials.png'>
       <Window class='container'>
         <LeftNavButton platform='ios'>
-          <Button title='Back' onClick='closeWindow'/>
+          <Button title='Back' onClick='closeWindow' />
         </LeftNavButton>
         <ScrollView class='scroll'>
           <View class='socialCont'>
-            <ImageView class='img' image='/images/facebook.png'/>
-            <Label class='socialLink' onClick='openFacebook' text='View Facebook'/>
+            <ImageView class='img' image='/images/facebook.png' />
+            <Label class='socialLink' onClick='openFacebook' text='View Facebook' />
           </View>
           <View class='socialCont'>
-            <ImageView class='img' image='/images/twitter.png'/>
-            <Label class='socialLink' onClick='openTwitter' text='View Twitter'/>
+            <ImageView class='img' image='/images/twitter.png' />
+            <Label class='socialLink' onClick='openTwitter' text='View Twitter' />
           </View>
           <View class='socialCont'>
-            <ImageView class='img' image='/images/youtube.png'/>
-            <Label class='socialLink' onClick='openYouTube' text='View YouTube'/>
+            <ImageView class='img' image='/images/youtube.png' />
+            <Label class='socialLink' onClick='openYouTube' text='View YouTube' />
           </View>
           <View class='socialCont'>
-            <ImageView class='img' image='/images/vimeo.png'/>
-            <Label class='socialLink' onClick='openVimeo' text='View Vimeo'/>
+            <ImageView class='img' image='/images/vimeo.png' />
+            <Label class='socialLink' onClick='openVimeo' text='View Vimeo' />
           </View>
         </ScrollView>
       </Window>

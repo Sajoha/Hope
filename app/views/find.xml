@@ -1,14 +1,14 @@
 <Alloy>
-  <Window class='container' title='Find Us' backgroundColor='#FDF5E8' layout='vertical'>
+  <Window class='container'>
     <ScrollView id='content' height='88%' layout='vertical'>
-      <Label id='addressTitle' class='title' text='Address' top='1%'/>
-      <Label id='addressLbl' top='1%'/>
-      <Label id='emailTitle' class='title' text='Email'/>
-      <Label id='emailLbl' top='1%'/>
-      <Label id='phoneTitle' class='title' text='Phone Number'/>
-      <Label id='phoneLbl' top='1%'/>
-      <ImageView id='img'/>
+      <Label id='addressTitle' class='title' text='Address' top='1%' />
+      <Label id='addressLbl' top='1%' />
+      <Label id='emailTitle' class='title' text='Email' />
+      <Label id='emailLbl' top='1%' />
+      <Label id='phoneTitle' class='title' text='Phone Number' />
+      <Label id='phoneLbl' top='1%' />
+      <ImageView id='img' />
     </ScrollView>
-    <Label id='mapBtn' onClick='loadMap'/>
+    <Label id='mapBtn' onClick='loadMap' />
   </Window>
 </Alloy>

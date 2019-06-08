@@ -1,5 +1,5 @@
 '#win': {
-  backgroundColor: '#FDF5E8'
+  backgroundColor: Alloy.Globals.backColour
 }
 
 '#content': {
