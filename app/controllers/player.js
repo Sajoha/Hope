@@ -42,8 +42,6 @@ function setUI(passage) {
 	$.content.visible = true;
 }
 
-function closeWindow() { $.win.close(); }
-
 function back10() { $.audioPlayer.seekToTime($.audioPlayer.progress - 10000); }
 
 function play() { $.audioPlayer.start(); }
@@ -52,7 +50,7 @@ function pause() { $.audioPlayer.pause(); }
 
 function forward10() { $.audioPlayer.seekToTime($.audioPlayer.progress + 10000); }
 
-$.win.addEventListener('close', (e) => { $.audioPlayer.stop(); });
+$.window.addEventListener('close', (e) => { $.audioPlayer.stop(); });
 
 $.audioPlayer.addEventListener('progress', (e) => {
 	const

@@ -1,21 +1,23 @@
-$.index.open();
+Alloy.Globals.nav = $.index;
 
 function openSermons() {
-	$.index.openWindow(Alloy.createController('sermons').getView());
+	Alloy.Globals.nav.openWindow(Alloy.createController('sermons').getView());
 }
 
 function openEvents() {
-	$.index.openWindow(Alloy.createController('events').getView());
+	Alloy.Globals.nav.openWindow(Alloy.createController('events').getView());
 }
 
 function openFind() {
-	$.index.openWindow(Alloy.createController('find').getView());
+	Alloy.Globals.nav.openWindow(Alloy.createController('find').getView());
 }
 
 function openAbout() {
-	$.index.openWindow(Alloy.createController('about').getView());
+	Alloy.Globals.nav.openWindow(Alloy.createController('about').getView());
 }
 
 function openPastor() {
-	$.index.openWindow(Alloy.createController('pastor').getView());
+	Alloy.Globals.nav.openWindow(Alloy.createController('pastor').getView());
 }
+
+$.index.open();

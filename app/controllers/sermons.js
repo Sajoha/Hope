@@ -83,5 +83,5 @@ function setUI(sermons, preachers, serviceType) {
 function handleListItemClick(e) {
 	const sermon = e.section.getItemAt(e.itemIndex).data;
 
-	Alloy.createController('player', { sermon }).getView().open();
+	Alloy.Globals.nav.openWindow(Alloy.createController('player', { sermon }).getView());
 }

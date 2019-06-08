@@ -1,10 +1,22 @@
 '.container': {
   title: 'About Us',
-  layout: 'vertical',
   backgroundColor: Alloy.Globals.backColour
 }
 
+'#tabbed': {
+  index: 0,
+  top: '1%',
+  height: '7%',
+  width: '95%',
+  borderWidth: 2,
+  borderRadius: 10,
+  borderColor: Alloy.Globals.accentColour,
+  backgroundColor: Alloy.Globals.accentColour
+}
+
 '.scroll': {
+  top: '10%',
+  height: '90%',
   layout: 'vertical',
   contentWidth: '100%'
 }
@@ -38,11 +50,13 @@
   borderColor: Alloy.Globals.accentColour,
   borderWidth: 2,
   borderRadius: 10,
+  backgroundColor: 'white',
   color: Alloy.Globals.accentColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '#tabGrp': {
+  backButtonTitle: 'Back',
   backgroundColor: Alloy.Globals.backColour
 }
 
@@ -55,7 +69,7 @@
 }
 
 '#servicesTimes': {
-  top: '1%',
+  top: '2%',
   font: { fontSize: 12 },
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
   text: 'Sunday Morning: 11:30AM\n\nSunday Evening: 5:00PM'
@@ -70,7 +84,7 @@
 }
 
 '#additionalTimes': {
-  top: '1%',
+  top: '2%',
   font: { fontSize: 12 },
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
   text: 'Men\'s Bible Study: Wednesdays 7:00PM\n\nWomen\'s Bible Study: Wednesdays 7:00PM\n\nTruth Trekkers: Wednesdays 7:00PM'
@@ -85,7 +99,7 @@
 }
 
 '#englishTimes': {
-  top: '1%',
+  top: '2%',
   font: { fontSize: 12 },
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
   text: 'English Classes: Sundays 3:00PM'

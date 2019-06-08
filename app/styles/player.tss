@@ -1,4 +1,4 @@
-'#win': {
+'#window': {
   backgroundColor: Alloy.Globals.backColour
 }
 
@@ -113,5 +113,7 @@
 '#loading': {
   visible: true,
   message: 'Loading',
-  style: Ti.UI.ActivityIndicatorStyle.BIG_DARK
+  color: Alloy.Globals.accentColour,
+  indicatorColor: Alloy.Globals.accentColour,
+  font: { fontSize: 20 }
 }
