@@ -1,5 +1,5 @@
 <Alloy>
-  <Window class='container' title='Upcoming Events' onOpen='getEvents'>
+  <Window id='window' title='Upcoming Events' onOpen='getEvents'>
     <View id='content'>
       <ListView id='listview' defaultItemTemplate='eventCell' onItemclick='handleListItemClick'>
         <ListSection id='section' />
@@ -20,6 +20,17 @@
         </Templates>
         <RefreshControl id="refresh" onRefreshstart="refreshData" />
       </ListView>
+    </View>
+    <View id='details' visible='false'>
+      <Label id='detTitle' />
+      <ScrollView id='scroll'>
+        <Label id='detStart' />
+        <Label id='detEnd' />
+        <Label id='detLoc' />
+        <Label id='detURL' />
+        <Label id='detText' />
+      </ScrollView>
+      <Label id='detButton' />
     </View>
     <ActivityIndicator id='loading' />
   </Window>

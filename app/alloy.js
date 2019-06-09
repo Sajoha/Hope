@@ -28,4 +28,4 @@ Alloy.Globals.getPreachers = `${hope}/wp-json/wp/v2/${preachers}`;
 
 // Colours
 Alloy.Globals.backColour = '#FDF5E8';
-Alloy.Globals.accentColour = '#40E0D0';
+Alloy.Globals.accentColour = '#336699';

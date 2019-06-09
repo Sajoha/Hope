@@ -5,7 +5,7 @@
  */
 
 exports.cliVersion = '>=3.X';
-exports.version = '1.0.1';
+exports.version = '1.0.0';
 var SILENT = true;
 
 exports.init = function (logger, config, cli, appc) {
@@ -43,6 +43,7 @@ exports.init = function (logger, config, cli, appc) {
 
 		var cRequire = afs.resolvePath(__dirname, '..', 'Alloy', 'commands', 'compile', 'index.js'),
 			config = {
+				theme: cli.argv['theme'] ? cli.argv['theme'] : null,
 				platform: /(?:iphone|ipad)/.test(cli.argv.platform) ? 'ios' : cli.argv.platform,
 				version: '0',
 				simtype: 'none',
@@ -54,10 +55,6 @@ exports.init = function (logger, config, cli, appc) {
 			// turn off all logging output for code analyzer build hook
 			config.noBanner = 'true';
 			config.logLevel = '-1';
-		}
-
-		if (cli.argv.theme) {
-			config.theme = cli.argv.theme;
 		}
 
 		config = Object.keys(config).map(function (c) {

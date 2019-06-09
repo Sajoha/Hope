@@ -1,7 +1,86 @@
-'.container': {
+'#window': {
   width: Ti.UI.FILL,
   height: Ti.UI.FILL,
   backgroundColor: Alloy.Globals.backColour
+}
+
+'#details': {
+  width: '80%',
+  height: '50%',
+  layout: 'vertical',
+  backgroundColor: 'white',
+  borderWidth: 3,
+  borderRadius: 10,
+  borderColor: Alloy.Globals.accentColour,
+}
+
+'#scroll': {
+  top: '4%',
+  width: '90%',
+  height: '70%',
+  layout: 'vertical',
+  contentWidth: '100%'
+}
+
+'#detTitle': {
+  top: '5%',
+  width: '90%',
+  height: Ti.UI.SIZE,
+  font: { fontSize: 22 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+'#detText': {
+  top: 10,
+  width: Ti.UI.FILL,
+  height: Ti.UI.SIZE,
+  font: { fontSize: 16 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+'#detStart': {
+  width: Ti.UI.FILL,
+  height: Ti.UI.SIZE,
+  font: { fontSize: 12 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+'#detEnd': {
+  top: 2,
+  width: Ti.UI.FILL,
+  height: Ti.UI.SIZE,
+  font: { fontSize: 12 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+'#detLoc': {
+  top: 2,
+  width: Ti.UI.FILL,
+  height: Ti.UI.SIZE,
+  font: { fontSize: 12 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+'#detURL': {
+  top: 2,
+  color: '#0000EE',
+  width: Ti.UI.FILL,
+  height: Ti.UI.SIZE,
+  font: { fontSize: 12 },
+  autoLink: Ti.UI.AUTOLINK_URLS,
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+'#detButton': {
+  top: '2%',
+  text: 'Close',
+  borderRadius: 5,
+  width: '20%',
+  height: Ti.UI.SIZE,
+  font: { fontSize: 18 },
+  backgroundColor: '#D3D3D3',
+  color: Alloy.Globals.accentColour,
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '#content': {
@@ -56,21 +135,24 @@
   top: '11%',
   center: 0,
   width: Ti.UI.SIZE,
-  font: { fontSize: 24 }
+  font: { fontSize: 24 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '#date': {
   top: '5%',
   center: 0,
   width: Ti.UI.SIZE,
-  font: { fontSize: 10 }
+  font: { fontSize: 10 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '#time': {
   top: '3%',
   center: 0,
   width: Ti.UI.SIZE,
-  font: { fontSize: 10 }
+  font: { fontSize: 10 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '#loading': {
