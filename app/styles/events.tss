@@ -25,7 +25,8 @@
 '#detTitle': {
   top: '5%',
   width: '90%',
-  height: Ti.UI.SIZE,
+  height: '10%',
+  minimumFontSize: 12,
   font: { fontSize: 22 },
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
