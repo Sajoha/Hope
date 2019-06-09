@@ -50,7 +50,10 @@ function pause() { $.audioPlayer.pause(); }
 
 function forward10() { $.audioPlayer.seekToTime($.audioPlayer.progress + 10000); }
 
-$.window.addEventListener('close', (e) => { $.audioPlayer.stop(); });
+$.window.addEventListener('close', (e) => {
+	$.audioPlayer.stop();
+	$.audioPlayer.release();
+});
 
 $.audioPlayer.addEventListener('progress', (e) => {
 	const
