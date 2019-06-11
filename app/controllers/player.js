@@ -7,20 +7,30 @@ let state;
 
 function getMainPassage() {
 	return new Promise((resolve, reject) => {
-		lib.request({ url: `https://bible-api.com/${data.book.replace(/ /g, '')}?translation=kjv` })
+		lib.request({ url: `https://bible-api.com/${data.passage.replace(/ /g, '')}?translation=kjv` })
 			.then(data => setUI(JSON.parse(data)))
 			.catch(err => reject(err));
 	});
 }
 
 function setUI(passage) {
-	$.window.title = data.sermon;
+	let sermonDate = moment.unix(data.date).format('dddd Do MMMM');
+
+	switch (data.service) {
+		case 'Sunday AM':
+			sermonDate = `${sermonDate} - Morning`;
+			break;
+
+		case 'Sunday PM':
+		case 'Wednesday PM':
+			sermonDate = `${sermonDate} - Evening`;
+			break;
+	}
+
+	$.window.title = sermonDate;
+	$.sermonTitle.text = data.sermon;
 	$.preacher.text = `Preacher: ${data.preacher}`;
 	$.passage.text = `Main Passage: ${data.passage}`;
-	$.date.text = `Date: ${data.date}`;
-	$.time.text = `Time: ${data.service}`;
-	$.length.text = `Duration: ${data.duration}`;
-	$.views.text = `View Count: ${data.views}`;
 
 	Ti.Media.audioSessionCategory = Ti.Media.AUDIO_SESSION_CATEGORY_PLAYBACK;
 
@@ -50,10 +60,7 @@ function pause() { $.audioPlayer.pause(); }
 
 function forward10() { $.audioPlayer.seekToTime($.audioPlayer.progress + 10000); }
 
-$.window.addEventListener('close', (e) => {
-	$.audioPlayer.stop();
-	$.audioPlayer.release();
-});
+$.window.addEventListener('close', (e) => { $.audioPlayer.release(); });
 
 $.audioPlayer.addEventListener('progress', (e) => {
 	const

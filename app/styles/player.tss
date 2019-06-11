@@ -7,15 +7,25 @@
   layout: 'vertical'
 }
 
-'#info': {
-  top: '2%',
-  height: '16%',
+'#data': {
+  top: '1%',
+  bottom: '1%',
+  width: '96%',
+  height: '18%',
   layout: 'vertical'
 }
 
-'.data': {
-  width: '96%',
-  height: '25%',
+'.title': {
+  height: '58%',
+  font: {
+    fontSize: 24,
+    fontWeight: 'semibold'
+  },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+'.info': {
+  height: '21%',
   font: { fontSize: 16 },
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
@@ -23,47 +33,62 @@
 '.leftText': {
   left: 0,
   width: '50%',
-  font: { fontSize: 16 },
+  font: { fontSize: 17 },
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '.rightText': {
   left: '50%',
   width: '50%',
-  font: { fontSize: 16 },
+  font: { fontSize: 17 },
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '#media': {
-  top: '2%',
+  top: '1%',
+  width: '95%',
   height: '20%',
   layout: 'vertical'
 }
 
-'.mediaContent': {
-  height: '50%',
+'.mediaButtons': {
+  height: '70%',
+  layout: 'horizontal'
+}
+
+'.mediaInformation': {
+  height: '30%',
   layout: 'horizontal'
 }
 
 '.mediaControl': {
-  top: '10%',
-  width: '50%',
-  height: '65%'
+  width: '60%',
+  height: '60%',
+  center: {
+    x: '50%',
+    y: '40%'
+  }
 }
 
 '.mediaText': {
-  top: '2%',
-  font: { fontSize: 12 }
+  center: {
+    x: '50%',
+    y: '80%'
+  },
+  font: { fontSize: 10 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '.controlContainer': {
+  top: '6%',
   left: '2%',
   right: '2%',
   width: '21%',
-  height: '98%',
+  height: '88%',
+  backgroundColor: 'white',
+  borderWidth: 3,
   borderRadius: 10,
-  layout: 'vertical',
-  backgroundColor: 'white'
+  borderColor: Alloy.Globals.accentColour
 }
 
 '#timeLabel': {
@@ -71,7 +96,8 @@
   right: '1%',
   width: '28%',
   height: Ti.UI.FILL,
-  font: { fontSize: 16 }
+  font: { fontSize: 14 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '#slider': {
@@ -91,20 +117,23 @@
 }
 
 '#biblePassage': {
-  height: '60%',
+  top: '1%',
+  bottom: '1%',
+  width: '95%',
+  height: '51%',
   layout: 'vertical'
 }
 
 '#bibleTitle': {
   left: '2%',
   font: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'semibold'
   }
 }
 
 '#bibleText': {
-  top: '2%',
+  top: 5,
   width: '96%',
   height: Ti.UI.SIZE,
   font: { fontSize: 16 }
@@ -116,4 +145,13 @@
   color: Alloy.Globals.accentColour,
   indicatorColor: Alloy.Globals.accentColour,
   font: { fontSize: 20 }
+}
+
+'.line': {
+  top: '1%',
+  bottom: '1%',
+  center: 0,
+  height: 1,
+  width: '90%',
+  backgroundColor: Alloy.Globals.accentColour
 }
