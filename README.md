@@ -5,7 +5,7 @@ This is a work in progress, to add feature suggestions please add them to the [i
 
 ## Running
 Once setup instructions have been completed, navigate to the project root and run:
-`ti build -p <ios,android>`
+`ti build -p <ios,android> -T <device,simulator> --deploy-type development`
 
 ## Setup
 
@@ -13,10 +13,10 @@ Once setup instructions have been completed, navigate to the project root and ru
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 ### Node
-`brew cask install node`
+`brew install node`
 
 ### Titanium
-`npm install titanium -g`
+`npm install appcelerator -g`
 
 ## Technologies
 The application is built on [Appcelerator's](https://www.appcelerator.com) cross platform Titanium SDK.
