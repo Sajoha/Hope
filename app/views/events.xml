@@ -13,7 +13,9 @@
                   <Label id='time' bindId='time' />
                 </View>
                 <View id='line' />
-                <Label class='title' bindId='name' />
+                <View id='titleData'>
+                  <Label class='title' bindId='name' />
+                </View>
               </View>
             </View>
           </ItemTemplate>

@@ -26,8 +26,9 @@
   top: '5%',
   width: '90%',
   height: '10%',
+  maxLines: 2,
   minimumFontSize: 12,
-  font: { fontSize: 22 },
+  font: { fontSize: 24 },
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
@@ -112,10 +113,20 @@
   borderColor: Alloy.Globals.accentColour
 }
 
-'.title': {
-  center: 0,
+'#titleData': {
   width: '74%',
-  height: Ti.UI.FILL,
+  height: '90%',
+}
+
+'.title': {
+  center: {
+    x: '50%',
+    y: '50%'
+  },
+  maxLines: 3,
+  width: '96%',
+  height: '100%',
+  minimumFontSize: 14,
   font: { fontSize: 22 },
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }

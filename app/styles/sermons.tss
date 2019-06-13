@@ -24,7 +24,7 @@
   top: 4,
   bottom: 4,
   height: 65,
-  width: '95%',
+  width: '96%',
   borderWidth: 3,
   borderRadius: 10,
   layout: 'vertical',
@@ -33,16 +33,18 @@
 }
 
 '#sermon': {
-  center: {
-    x: '50%',
-    y: '50%'
-  },
-  top: 5,
-  height: '47%',
-  font: { fontSize: 20 }
+  top: '8%',
+  left: '2%',
+  width: '96%',
+  height: '40%',
+  maxLines: 2,
+  minimumFontSize: 8,
+  font: { fontSize: 20 },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '#hLine': {
+  top: '6%',
   height: 1,
   width: '85%',
   backgroundColor: Alloy.Globals.accentColour
@@ -69,7 +71,9 @@
     y: '50%'
   },
   width: 1,
-  height: '50%',
+  height: '46%',
+  maxLines: 2,
+  minimumFontSize: 8,
   backgroundColor: Alloy.Globals.accentColour
 }
 
@@ -78,7 +82,9 @@
     x: '75%',
     y: '50%'
   },
-  width: '50%',
+  width: '46%',
+  maxLines: 2,
+  minimumFontSize: 8,
   font: { fontSize: 10 },
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }

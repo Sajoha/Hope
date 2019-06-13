@@ -17,6 +17,8 @@
 
 '.title': {
   height: '58%',
+  maxLines: 2,
+  minimumFontSize: 12,
   font: {
     fontSize: 24,
     fontWeight: 'semibold'
