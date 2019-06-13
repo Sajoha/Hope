@@ -48,19 +48,21 @@ function setUI(sermons, preachers, serviceType) {
 
 		(serviceIndex >= 0) ? service = serviceType[serviceIndex]['name']: service = 'Unknown';
 
-		const sermonDuration = moment(sermon.sermon_audio_duration, 'HH:mm:ss').format('mm:ss');
+		const
+			sermonTitle = sermon.title.rendered.replace(/&#8217;/g, '\''),
+			sermonDuration = moment(sermon.sermon_audio_duration, 'HH:mm:ss').format('mm:ss');
 
 		sermonData.push({
-			sermon: { text: sermon.title.rendered },
+			sermon: { text: sermonTitle },
 			preacher: { text: `Preacher: ${preacher}` },
 			passage: { text: `Passage: ${sermon.bible_passage}` },
 			data: {
 				service: service,
 				preacher: preacher,
+				sermon: sermonTitle,
 				date: sermon.sermon_date,
 				duration: sermonDuration,
 				link: sermon.sermon_audio,
-				sermon: sermon.title.rendered,
 				passage: sermon.bible_passage
 			},
 			properties: {
