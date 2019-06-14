@@ -23,7 +23,7 @@
       <Label class='title' text='Our Beliefs' />
       <Label id='beliefsText' />
     </ScrollView>
-    <View id='location' class='content' visible='false'>
+    <ScrollView id='location' class='content' visible='false'>
       <Label id='addressTitle' class='title' text='Address' />
       <Label id='addressLbl' />
       <Label id='emailTitle' class='title' text='Email' top='1%' />
@@ -32,7 +32,7 @@
       <Label id='phoneLbl' />
       <ImageView id='img' />
       <Label id='mapBtn' onClick='loadMap' />
-    </View>
+    </ScrollView>
     <View id='socials' class='content' visible='false'>
       <View class='socialCont'>
         <ImageView class='img' image='/images/facebook.png' />

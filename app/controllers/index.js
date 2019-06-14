@@ -8,8 +8,13 @@ function openEvents() {
 	Alloy.Globals.nav.openWindow(Alloy.createController('events').getView());
 }
 
-function openFind() {
-	Alloy.Globals.nav.openWindow(Alloy.createController('find').getView());
+function createEmail() {
+	const emailDialog = Ti.UI.createEmailDialog({
+		subject: 'Please Consider My Prayer Request',
+		toRecipients: ['daniel.canavan@me.com']
+	});
+
+	emailDialog.open();
 }
 
 function openAbout() {

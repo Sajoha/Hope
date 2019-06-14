@@ -17,6 +17,10 @@
 					<Label class='button' text='Upcoming Events' />
 				</View>
 
+				<View class='cell' onClick='createEmail'>
+					<Label class='button' text='Prayer Request' />
+				</View>
+
 				<View class='cell' onClick='openAbout'>
 					<Label class='button' text='Church Information' />
 				</View>
