@@ -37,10 +37,10 @@ function setUI(events) {
 		});
 	}
 
-	$.loading.hide();
+	$.loading.visible = false;
 	$.section.items = eventData;
 	$.listview.sections = [$.section];
-	$.content.show();
+	$.content.visible = true;
 }
 
 function handleListItemClick(e) {

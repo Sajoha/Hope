@@ -1,6 +1,12 @@
 '.container': { backgroundColor: 'white' }
 
-'.title': { middle: '0%' }
+'.title': {
+	center: {
+		x: '50%',
+		y: '50%'
+	},
+	height: '100%'
+}
 
 '.titleView': {
 	top: '8%',
@@ -13,7 +19,7 @@
 		endPoint: { x: '100%', y: '50%' },
 		colors: [
 			{ color: '#00000000', offset: 0.0 },
-			{ color: '#FFFFFFFF', offset: 0.5 },
+			{ color: '#6B6C6C', offset: 0.5 },
 			{ color: '#00000000', offset: 1.0 }
 		]
 	}

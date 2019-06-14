@@ -9,6 +9,7 @@
   height: '50%',
   layout: 'vertical',
   backgroundColor: 'white',
+  color: Alloy.Globals.textColour,
   borderWidth: 3,
   borderRadius: 10,
   borderColor: Alloy.Globals.accentColour,
@@ -29,6 +30,7 @@
   maxLines: 2,
   minimumFontSize: 12,
   font: { fontSize: 24 },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
@@ -37,6 +39,7 @@
   width: Ti.UI.FILL,
   height: Ti.UI.SIZE,
   font: { fontSize: 16 },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
@@ -44,6 +47,7 @@
   width: Ti.UI.FILL,
   height: Ti.UI.SIZE,
   font: { fontSize: 12 },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
@@ -52,6 +56,7 @@
   width: Ti.UI.FILL,
   height: Ti.UI.SIZE,
   font: { fontSize: 12 },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
@@ -60,6 +65,7 @@
   width: Ti.UI.FILL,
   height: Ti.UI.SIZE,
   font: { fontSize: 12 },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
@@ -128,13 +134,13 @@
   height: '100%',
   minimumFontSize: 14,
   font: { fontSize: 22 },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '.data': {
   width: '25%',
-  height: Ti.UI.FILL,
-  layout: 'vertical'
+  height: Ti.UI.FILL
 }
 
 '#line': {
@@ -144,26 +150,35 @@
 }
 
 '#day': {
-  top: '11%',
-  center: 0,
+  center: {
+    x: '50%',
+    y: '30%'
+  },
   width: Ti.UI.SIZE,
-  font: { fontSize: 24 },
+  font: { fontSize: 26 },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '#date': {
-  top: '5%',
-  center: 0,
+  center: {
+    x: '50%',
+    y: '62%'
+  },
   width: Ti.UI.SIZE,
   font: { fontSize: 10 },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '#time': {
-  top: '3%',
-  center: 0,
+  center: {
+    x: '50%',
+    y: '80%'
+  },
   width: Ti.UI.SIZE,
   font: { fontSize: 10 },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 

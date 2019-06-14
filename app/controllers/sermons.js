@@ -72,10 +72,10 @@ function setUI(sermons, preachers, serviceType) {
 		});
 	});
 
-	$.loading.hide();
+	$.loading.visible = false;
 	$.section.items = sermonData;
 	$.listview.sections = [$.section];
-	$.content.show();
+	$.content.visible = true;
 }
 
 function handleListItemClick(e) {

@@ -23,26 +23,14 @@
     fontSize: 24,
     fontWeight: 'semibold'
   },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '.info': {
   height: '21%',
   font: { fontSize: 16 },
-  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
-}
-
-'.leftText': {
-  left: 0,
-  width: '50%',
-  font: { fontSize: 17 },
-  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
-}
-
-'.rightText': {
-  left: '50%',
-  width: '50%',
-  font: { fontSize: 17 },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
@@ -54,8 +42,8 @@
 }
 
 '.mediaButtons': {
-  height: '70%',
-  layout: 'horizontal'
+  width: '95%',
+  height: '70%'
 }
 
 '.mediaInformation': {
@@ -64,8 +52,7 @@
 }
 
 '.mediaControl': {
-  width: '60%',
-  height: '60%',
+  width: '55%',
   center: {
     x: '50%',
     y: '40%'
@@ -78,19 +65,45 @@
     y: '80%'
   },
   font: { fontSize: 10 },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '.controlContainer': {
-  top: '6%',
-  left: '2%',
-  right: '2%',
   width: '21%',
-  height: '88%',
+  height: '85%',
   backgroundColor: 'white',
   borderWidth: 3,
   borderRadius: 10,
   borderColor: Alloy.Globals.accentColour
+}
+
+'#backCont': {
+  center: {
+    x: '12.5%',
+    y: '50%'
+  }
+}
+
+'#playCont': {
+  center: {
+    x: '37.5%',
+    y: '50%'
+  }
+}
+
+'#pauseCont': {
+  center: {
+    x: '62.5%',
+    y: '50%'
+  }
+}
+
+'#forwardCont': {
+  center: {
+    x: '87.5%',
+    y: '50%'
+  }
 }
 
 '#timeLabel': {
@@ -99,6 +112,7 @@
   width: '28%',
   height: Ti.UI.FILL,
   font: { fontSize: 14 },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
@@ -131,14 +145,16 @@
   font: {
     fontSize: 18,
     fontWeight: 'semibold'
-  }
+  },
+  color: Alloy.Globals.textColour
 }
 
 '#bibleText': {
   top: 5,
   width: '96%',
   height: Ti.UI.SIZE,
-  font: { fontSize: 16 }
+  font: { fontSize: 16 },
+  color: Alloy.Globals.textColour
 }
 
 '#loading': {
@@ -152,7 +168,10 @@
 '.line': {
   top: '1%',
   bottom: '1%',
-  center: 0,
+  center: {
+    x: '50%',
+    y: '50%'
+  },
   height: 1,
   width: '90%',
   backgroundColor: Alloy.Globals.accentColour

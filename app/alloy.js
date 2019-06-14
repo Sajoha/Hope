@@ -27,5 +27,6 @@ Alloy.Globals.getServices = `${hope}/wp-json/wp/v2/${services}`;
 Alloy.Globals.getPreachers = `${hope}/wp-json/wp/v2/${preachers}`;
 
 // Colours
+Alloy.Globals.textColour = 'black';
 Alloy.Globals.backColour = '#FDF5E8';
 Alloy.Globals.accentColour = '#336699';

@@ -40,6 +40,7 @@
   maxLines: 2,
   minimumFontSize: 8,
   font: { fontSize: 20 },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
@@ -62,6 +63,7 @@
   },
   width: '50%',
   font: { fontSize: 10 },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
@@ -86,6 +88,7 @@
   maxLines: 2,
   minimumFontSize: 8,
   font: { fontSize: 10 },
+  color: Alloy.Globals.textColour,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 

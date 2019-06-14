@@ -2,42 +2,42 @@
 	<Window id='window' onOpen='getMainPassage' backButtonTitle=''>
 		<View id='content' layout='vertical'>
 			<View id='data'>
-				<Label id='sermonTitle' class='title' />
-				<Label id='preacher' class='info' />
-				<Label id='passage' class='info' />
+				<Label id='sermonTitle' class='title'/>
+				<Label id='preacher' class='info'/>
+				<Label id='passage' class='info'/>
 			</View>
-			<View class='line' />
+			<View class='line'/>
 			<View id='media'>
 				<View class='mediaButtons'>
-					<View class='controlContainer'>
-						<Button id='back' class='mediaControl' onClick='back10' image='/images/back.png' />
-						<Label class='mediaText' text='Back 10s' />
+					<View id='backCont' class='controlContainer' onClick='back10'>
+						<ImageView id='back' class='mediaControl' image='/images/back.png'/>
+						<Label class='mediaText' text='Back 10s'/>
 					</View>
-					<View class='controlContainer'>
-						<Button id='play' class='mediaControl' onClick='play' image='/images/play.png' />
-						<Label class='mediaText' text='Play' />
+					<View id='playCont' class='controlContainer' onClick='play'>
+						<ImageView id='play' class='mediaControl' image='/images/play.png'/>
+						<Label class='mediaText' text='Play'/>
 					</View>
-					<View class='controlContainer'>
-						<Button id='pause' class='mediaControl' onClick='pause' image='/images/pause.png' />
-						<Label class='mediaText' text='Pause' />
+					<View id='pauseCont' class='controlContainer' onClick='pause'>
+						<ImageView id='pause' class='mediaControl' image='/images/pause.png'/>
+						<Label class='mediaText' text='Pause'/>
 					</View>
-					<View class='controlContainer'>
-						<Button id='forward' class='mediaControl' onClick='forward10' image='/images/forward.png' />
-						<Label class='mediaText' text='Forward 10s' />
+					<View id='forwardCont' class='controlContainer' onClick='forward10'>
+						<ImageView id='forward' class='mediaControl' image='/images/forward.png'/>
+						<Label class='mediaText' text='Forward 10s'/>
 					</View>
 				</View>
 				<View class='mediaInformation'>
-					<Label id='timeLabel' />
-					<Slider id='slider' />
+					<Label id='timeLabel'/>
+					<Slider id='slider'/>
 				</View>
-				<AudioPlayer id='audioPlayer' />
+				<AudioPlayer id='audioPlayer'/>
 			</View>
-			<View class='line' />
+			<View class='line'/>
 			<ScrollView id='biblePassage'>
-				<Label id='bibleTitle' />
-				<Label id='bibleText' />
+				<Label id='bibleTitle'/>
+				<Label id='bibleText'/>
 			</ScrollView>
 		</View>
-		<ActivityIndicator id='loading' />
+		<ActivityIndicator id='loading'/>
 	</Window>
 </Alloy>
