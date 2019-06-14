@@ -1,4 +1,6 @@
-'.container': { backgroundColor: 'white' }
+'Window[platform=android]':{
+	theme: 'Theme.AppCompat.NoTitleBar'
+}
 
 '.title': {
 	center: {
