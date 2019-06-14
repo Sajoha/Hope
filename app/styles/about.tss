@@ -1,12 +1,12 @@
 '.container': {
-  title: 'About Us',
+  title: 'Church Information',
   backgroundColor: Alloy.Globals.backColour
 }
 
 '#tabbed': {
   index: 0,
   top: '1%',
-  height: '7%',
+  height: '6%',
   width: '95%',
   borderWidth: 2,
   borderRadius: 10,
@@ -14,15 +14,14 @@
   backgroundColor: Alloy.Globals.accentColour
 }
 
-'.scroll': {
-  top: '10%',
-  height: '90%',
+'.content': {
+  top: '8%',
+  height: '92%',
   layout: 'vertical',
   contentWidth: '100%'
 }
 
 '.title': {
-  top: '1%',
   font: {
     fontSize: 22,
     fontWeight: 'semibold'
@@ -120,4 +119,47 @@
   textAlign: Ti.UI.TEXT_ALIGNMENT_JUSTIFY,
 
   text: 'We believe in the trinity of the Godhead; That the eternally existing God has manifested himself in three persons: God, the Father; God, the Son; and God, the Holy Spirit, yet without division of nature, but rather, one true God. – 1 John 5.\n\nWe believe that the Lord Jesus Christ, the Word, became flesh by being born of a virgin, and that he was and is both God and Man, one person with two natures. We believe that he bodily resurrected on the third day and that his position is redeemer, Lord, and Judge. Jesus is the Son of God, and as such is the very God, The great I AM, Jehovah God. – John 1,5 and Luke 2.\n\nWe believe in the vicarious, literal, physical death of Jesus and that we receive remission of sins through his Blood. His blood then makes atonement for all our sin. – Hebrews 9.\n\nWe believe the Bible is the verbally inspired inerrant, infallible Word of God, both the Old and New Testaments. Additionally, the Bible is our authority for faith and practice in local New Testament churches. God has preserved his word as promised, in the English through the authorized Version, the King James Version 1611. – 2 Tim 3:16,17.\n\nWe believe all men are born into sin, that they have a sinful nature, and that they must repent of their sins and accept salvation by grace through faith in Christ, not external works. Furthermore, their salvation will be evidenced by a changed nature and desire to do God’s will.-Romans 3:10 & 23, Ephesians 2:8,9.\n\nWe believe in the eternal security of the believer. Once a person is saved, God, the author of his salvation is also the one who retains it, grants eternal blessedness and a literal heaven for the redeemed.-John 10.\n\nWe believe in eternal damnation and a literal, fiery hell for the lost who reject Christ.-Luke 16.\n\nWe believe in the literal, physical, premillenial return of our Lord and Savior Jesus Christ.-1 Thessalonians 4 & 5.\n\nWe believe in the Biblical authority of the local, autonomous, independent church, from which all missionaries are commissioned and sent forth.-Matthew 16, Acts 13.\n\nWe believe all believers are called into a life of separation from all worldly practices, places, and alliances and unto a life wholly sanctified to the service of the Lord Jesus Christ.-1 John 2, 2 Corinthians 6.'
+}
+
+'#addressLbl': {
+  top: '0.5%',
+  text: 'Taney Hall,\n3 Eglinton Terrace, Dundrum,\nDublin 14, D14 C7F7',
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+  color: Alloy.Globals.textColour,
+  font: { fontSize: 14 }
+}
+
+'#emailLbl': {
+  top: '0.5%',
+  color: Alloy.Globals.textColour,
+  text: 'daniel.canavan@me.com',
+  font: { fontSize: 14 }
+}
+
+'#phoneLbl': {
+  top: '0.5%',
+  text: '01-294-1696',
+  font: { fontSize: 14 },
+  color: Alloy.Globals.textColour
+}
+
+'#img': {
+  top: '10%',
+  width: '95%',
+  borderRadius: 10,
+  image: '/images/interior.png'
+}
+
+'#mapBtn': {
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+  color: Alloy.Globals.accentColour,
+  text: 'Show On Map',
+  font: { fontSize: '20dp' },
+  top: '2%',
+	width: '95%',
+	height: '9%',
+  borderWidth: 2,
+	borderRadius: 10,
+  backgroundColor: 'white',
+  borderColor: Alloy.Globals.accentColour
 }

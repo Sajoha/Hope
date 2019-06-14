@@ -1,5 +1,5 @@
 <Alloy>
-  <Window id='window' title='Upcoming Events' onOpen='getEvents'>
+  <Window id='window' title='Upcoming Events' backButtonTitle='' onOpen='getEvents'>
     <View id='content'>
       <ListView id='listview' defaultItemTemplate='eventCell' onItemclick='handleListItemClick'>
         <ListSection id='section' />

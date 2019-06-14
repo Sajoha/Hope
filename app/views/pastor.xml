@@ -1,5 +1,5 @@
 <Alloy>
-  <Window class='container' title='Our Pastor' backgroundColor='white'>
-    <WebView url='https://hope.ie/about-us/our-pastor/'/>
+  <Window class='container' title='Our Pastor' backButtonTitle='' backgroundColor='white'>
+    <WebView url='https://hope.ie/about-us/our-pastor/' />
   </Window>
 </Alloy>

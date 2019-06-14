@@ -1,5 +1,5 @@
 <Alloy>
-	<Window id='win' class='container' title='Sermons' onOpen='getData'>
+	<Window id='win' class='container' title='Recent Sermons' backButtonTitle='' onOpen='getData'>
 		<View id='content'>
 			<ListView id='listview' defaultItemTemplate='SermonCell' onItemclick='handleListItemClick'>
 				<ListSection id='section' />

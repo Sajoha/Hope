@@ -1,44 +1,55 @@
 <Alloy>
-  <Window class='container'>
+  <Window class='container' backButtonTitle=''>
     <TabbedBar id='tabbed'>
       <Labels>
-        <Label title='Schedule'/>
-        <Label title='Beliefs'/>
-        <Label title='Socials'/>
+        <Label title='Schedule' />
+        <Label title='Beliefs' />
+        <Label title='Location' />
+        <Label title='Socials' />
       </Labels>
     </TabbedBar>
-    <ScrollView id='schedule' class='scroll' visible='true'>
-      <Label class='title' text='Services'/>
-      <Label id='servicesText'/>
-      <Label id='servicesTimes'/>
-      <Label class='title' text='Additional Studies' top='3%'/>
-      <Label id='additionalText'/>
-      <Label id='additionalTimes'/>
-      <Label class='title' text='English Language Classes' top='3%'/>
-      <Label id='englishText'/>
-      <Label id='englishTimes'/>
+    <ScrollView id='schedule' class='content' visible='true'>
+      <Label class='title' text='Services' />
+      <Label id='servicesText' />
+      <Label id='servicesTimes' />
+      <Label class='title' text='Additional Studies' top='3%' />
+      <Label id='additionalText' />
+      <Label id='additionalTimes' />
+      <Label class='title' text='English Language Classes' top='3%' />
+      <Label id='englishText' />
+      <Label id='englishTimes' />
     </ScrollView>
-    <ScrollView id='beliefs' class='scroll' visible='false'>
-      <Label class='title' text='Our Beliefs'/>
-      <Label id='beliefsText'/>
+    <ScrollView id='beliefs' class='content' visible='false'>
+      <Label class='title' text='Our Beliefs' />
+      <Label id='beliefsText' />
     </ScrollView>
-    <ScrollView id='socials' class='scroll' visible='false'>
+    <View id='location' class='content' visible='false'>
+      <Label id='addressTitle' class='title' text='Address' />
+      <Label id='addressLbl' />
+      <Label id='emailTitle' class='title' text='Email' top='1%' />
+      <Label id='emailLbl' />
+      <Label id='phoneTitle' class='title' text='Phone Number' top='1%' />
+      <Label id='phoneLbl' />
+      <ImageView id='img' />
+      <Label id='mapBtn' onClick='loadMap' />
+    </View>
+    <View id='socials' class='content' visible='false'>
       <View class='socialCont'>
-        <ImageView class='img' image='/images/facebook.png'/>
-        <Label class='socialLink' onClick='openFacebook' text='View Facebook'/>
+        <ImageView class='img' image='/images/facebook.png' />
+        <Label class='socialLink' onClick='openFacebook' text='View Facebook' />
       </View>
       <View class='socialCont'>
-        <ImageView class='img' image='/images/twitter.png'/>
-        <Label class='socialLink' onClick='openTwitter' text='View Twitter'/>
+        <ImageView class='img' image='/images/twitter.png' />
+        <Label class='socialLink' onClick='openTwitter' text='View Twitter' />
       </View>
       <View class='socialCont'>
-        <ImageView class='img' image='/images/youtube.png'/>
-        <Label class='socialLink' onClick='openYouTube' text='View YouTube'/>
+        <ImageView class='img' image='/images/youtube.png' />
+        <Label class='socialLink' onClick='openYouTube' text='View YouTube' />
       </View>
       <View class='socialCont'>
-        <ImageView class='img' image='/images/vimeo.png'/>
-        <Label class='socialLink' onClick='openVimeo' text='View Vimeo'/>
+        <ImageView class='img' image='/images/vimeo.png' />
+        <Label class='socialLink' onClick='openVimeo' text='View Vimeo' />
       </View>
-    </ScrollView>
+    </View>
   </Window>
 </Alloy>
