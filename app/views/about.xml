@@ -1,14 +1,15 @@
 <Alloy>
-  <Window class='container' backButtonTitle=''>
+  <Window id='window' class='container' backButtonTitle=''>
     <TabbedBar id='tabbed'>
       <Labels>
-        <Label title='Schedule' />
+        <Label title='Studies' />
         <Label title='Beliefs' />
+        <Label title='Pastor' />
         <Label title='Location' />
         <Label title='Socials' />
       </Labels>
     </TabbedBar>
-    <ScrollView id='schedule' class='content' visible='true'>
+    <View id='schedule' class='content' visible='true'>
       <Label class='title' text='Services' />
       <Label id='servicesText' />
       <Label id='servicesTimes' />
@@ -18,21 +19,22 @@
       <Label class='title' text='English Language Classes' top='3%' />
       <Label id='englishText' />
       <Label id='englishTimes' />
-    </ScrollView>
+    </View>
     <ScrollView id='beliefs' class='content' visible='false'>
       <Label class='title' text='Our Beliefs' />
       <Label id='beliefsText' />
     </ScrollView>
-    <ScrollView id='location' class='content' visible='false'>
-      <Label id='addressTitle' class='title' text='Address' />
+    <WebView id='pastor' class='content' visible='false' url='https://hope.ie/about-us/our-pastor/' />
+    <View id='location' class='content' visible='false'>
+      <Label id='addressTitle' class='title' text='Address' height='5%' />
       <Label id='addressLbl' />
-      <Label id='emailTitle' class='title' text='Email' top='1%' />
+      <Label id='emailTitle' class='title' text='Email' height='5%' top='1%' />
       <Label id='emailLbl' />
-      <Label id='phoneTitle' class='title' text='Phone Number' top='1%' />
+      <Label id='phoneTitle' class='title' text='Phone Number' height='5%' top='1%' />
       <Label id='phoneLbl' />
       <ImageView id='img' />
       <Label id='mapBtn' onClick='loadMap' />
-    </ScrollView>
+    </View>
     <View id='socials' class='content' visible='false'>
       <View class='socialCont'>
         <ImageView class='img' image='/images/facebook.png' />

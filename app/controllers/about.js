@@ -25,6 +25,7 @@ function loadMap() {
 $.tabbed.addEventListener('click', (e) => {
 	$.schedule.hide();
 	$.beliefs.hide();
+	$.pastor.hide();
 	$.location.hide();
 	$.socials.hide();
 
@@ -38,11 +39,33 @@ $.tabbed.addEventListener('click', (e) => {
 			break;
 
 		case 2:
-			$.location.show();
+			$.pastor.show();
 			break;
 
 		case 3:
+			$.location.show();
+			break;
+
+		case 4:
 			$.socials.show();
 			break;
+	}
+});
+
+$.window.addEventListener('postlayout', (e) => {
+	if($.window.size.width < 350) {
+		$.servicesText.font = { fontSize: 12 };
+		$.additionalText.font = { fontSize: 12 };
+		$.englishText.font = { fontSize: 12 };
+
+		$.servicesTimes.font = { fontSize: 10 };
+		$.additionalTimes.font = { fontSize: 10 };
+		$.englishTimes.font = { fontSize: 10 };
+
+		$.beliefsText.font = { fontSize: 12 };
+
+		$.addressLbl.font = { fontSize: 12 };
+		$.emailLbl.font = { fontSize: 12 };
+		$.phoneLbl.font = { fontSize: 12 };
 	}
 });
