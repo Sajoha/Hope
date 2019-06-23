@@ -1,0 +1,5 @@
+<Alloy>
+  <Window class='container' title='Church Giving' backButtonTitle='' backgroundColor='white'>
+    <WebView url='https://www.paypal.me/hopebaptistchurch' />
+  </Window>
+</Alloy>

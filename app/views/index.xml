@@ -21,12 +21,12 @@
 					<Label class='button' text='Prayer Request' />
 				</View>
 
-				<View class='cell' onClick='openAbout'>
-					<Label class='button' text='Church Information' />
+				<View class='cell' onClick='openDonate'>
+					<Label class='button' text='Church Giving' />
 				</View>
 
-				<View class='cell' onClick='openPastor'>
-					<Label class='button' text='Our Pastor' />
+				<View class='cell' onClick='openAbout'>
+					<Label class='button' text='Church Information' />
 				</View>
 			</ScrollView>
 		</Window>

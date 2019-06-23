@@ -21,8 +21,8 @@ function openAbout() {
 	Alloy.Globals.nav.openWindow(Alloy.createController('about').getView());
 }
 
-function openPastor() {
-	Alloy.Globals.nav.openWindow(Alloy.createController('pastor').getView());
+function openDonate() {
+	Alloy.Globals.nav.openWindow(Alloy.createController('donate').getView());
 }
 
 $.index.open();

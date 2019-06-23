@@ -31,7 +31,7 @@
 	top: '2%',
 	width: '95%',
 	height: '8%',
-	borderRadius: 26,
+	borderRadius: 22,
 	backgroundGradient: {
 		type: 'linear',
 		startPoint: { x: '50%', y: '0%' },
