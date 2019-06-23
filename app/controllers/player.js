@@ -17,14 +17,14 @@ function setUI(passage) {
 	let sermonDate = moment.unix(data.date).format('dddd Do MMMM');
 
 	switch (data.service) {
-	case 'Sunday AM':
-		sermonDate = `${sermonDate} - Morning`;
-		break;
+		case 'Sunday AM':
+			sermonDate = `${sermonDate} - Morning`;
+			break;
 
-	case 'Sunday PM':
-	case 'Wednesday PM':
-		sermonDate = `${sermonDate} - Evening`;
-		break;
+		case 'Sunday PM':
+		case 'Wednesday PM':
+			sermonDate = `${sermonDate} - Evening`;
+			break;
 	}
 
 	$.window.title = sermonDate;
@@ -120,4 +120,36 @@ $.slider.addEventListener('stop', (e) => {
 
 	// Resume playing if it already was in this state
 	if(state) $.audioPlayer.start();
+});
+
+$.backCont.addEventListener('touchstart', (e) => {
+	$.backCont.backgroundColor = '#D3D3D3';
+});
+
+$.backCont.addEventListener('touchend', (e) => {
+	$.backCont.backgroundColor = 'white';
+});
+
+$.playCont.addEventListener('touchstart', (e) => {
+	$.playCont.backgroundColor = '#D3D3D3';
+});
+
+$.playCont.addEventListener('touchend', (e) => {
+	$.playCont.backgroundColor = 'white';
+});
+
+$.pauseCont.addEventListener('touchstart', (e) => {
+	$.pauseCont.backgroundColor = '#D3D3D3';
+});
+
+$.pauseCont.addEventListener('touchend', (e) => {
+	$.pauseCont.backgroundColor = 'white';
+});
+
+$.forwardCont.addEventListener('touchstart', (e) => {
+	$.forwardCont.backgroundColor = '#D3D3D3';
+});
+
+$.forwardCont.addEventListener('touchend', (e) => {
+	$.forwardCont.backgroundColor = 'white';
 });
